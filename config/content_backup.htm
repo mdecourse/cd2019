@@ -1,0 +1,248 @@
+<h1>Introduction</h1>
+<p>機械設計工程系 2019 Spring 協同產品設計實習 (Introduction to Collaborative Product Design Practice)</p>
+<p>倉儲: <a href="https://github.com/mdecourse/cd2019">https://github.com/mdecourse/cd2019</a></p>
+<p>靜態網頁: <a href="https://mde.tw/cd2019">https://mde.tw/cd2019</a> </p>
+<p>動態網頁: <a href="https://cd2019.herokuapp.com">https://cd2019.herokuapp.com</a> </p>
+<h4>107學年教育目標:</h4>
+<p>本課程延續四技部計算機程式與電腦輔助設計實習之教學內容, 探討如何在網際協同環境進行機械產品開發.</p>
+<h4>107-2學期教育目標:</h4>
+<p>從 Intel-based 電腦硬體的組裝、安裝操作系統、配置網路連線到設定 <a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> , 引導學員學習如何運用電腦與網路系統, 自行架構符合機械協同設計流程使用之網際內容管理伺服系統. 之 後再利用此一網際協同環境進行機械產品開發.</p>
+<h4>達成學期教育目標之評量方式與標準:</h4>
+<p>評分比例:</p>
+<p style="padding-left: 30px;">學員出席 (20%)</p>
+<p style="padding-left: 30px;">電腦組裝與操作系統安裝 (10%)</p>
+<p style="padding-left: 30px;">網路連線配置與設定  (10%)</p>
+<p style="padding-left: 30px;">Github 倉儲與 CMSimfly 配置 (30%)</p>
+<p style="padding-left: 30px;">CMSimfly 操作 (20%)</p>
+<p style="padding-left: 30px;">CMSimfly 開發 (10%)</p>
+<p>評分方式:</p>
+<p style="padding-left: 30px;">學員自我評量<span> (30%)</span></p>
+<p style="padding-left: 30px;">分組自我評量 (30%)</p>
+<p style="padding-left: 30px;">倉儲歷程查驗 (40%)</p>
+<p>教學方式:</p>
+<p style="padding-left: 30px;">課堂講授</p>
+<p style="padding-left: 30px;">操作錄影</p>
+<p style="padding-left: 30px;">學員實習</p>
+<p style="padding-left: 30px;">分組報告</p>
+<h1>V-rep</h1>
+<p>source: <a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
+<p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
+<p><b>V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
+<p><b>1.</b><span> </span>Go to<span> </span><a class="external free" href="http://www.coppeliarobotics.com/" rel="nofollow">http://www.coppeliarobotics.com/</a><span> </span>and download and install the free V-REP PRO EDU software for your operating system.</p>
+<p><b>2.</b><span> </span>Launch V-REP and experiment with it. I suggest you choose File &gt; Open scene... and open one of the example "scenes" that comes with V-REP. V-REP "scenes" are specifications of environments, robots, and their actions, and when you press the "play" button the simulation begins. Experimenting with these scenes will show you some of the capabilities of V-REP. For example, you could choose the "motionPlanningAndGrasping.ttt" scene, as shown in the image below. (All scene files end in .ttt.)</p>
+<p><img alt="" height="534" src="/images/700px-VREP-demo-open.png" width="700"/></p><h2>Get started</h2>
+<p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
+<p><b>V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
+<p><b>1.</b><span> </span>Go to<span> </span><a class="external free" href="http://www.coppeliarobotics.com/" rel="nofollow">http://www.coppeliarobotics.com/</a><span> </span>and download and install the free V-REP PRO EDU software for your operating system.</p>
+<p><b>2.</b><span> </span>Launch V-REP and experiment with it. I suggest you choose File &gt; Open scene... and open one of the example "scenes" that comes with V-REP. V-REP "scenes" are specifications of environments, robots, and their actions, and when you press the "play" button the simulation begins. Experimenting with these scenes will show you some of the capabilities of V-REP. For example, you could choose the "motionPlanningAndGrasping.ttt" scene, as shown in the image below. (All scene files end in .ttt.)</p>
+<p><img alt="" height="534" src="/images/700px-VREP-demo-open.png" width="700"/></p>
+<dl>
+<dd><b>Important note regarding screen resolution:</b><span> </span>If you find the text and graphics to be too small on a high-resolution screen, you can edit the file "system/usrset.txt" to change the value of the variable "highResDisplay" to 1. On the Mac, this file is hidden in the directory "vrep.app" (the application you double-click to execute V-REP). You can see the contents of this directory using the Terminal utility on your Mac. In Terminal, use "cd" to navigate to the folder where vrep.app is, then cd to the directory "Contents/MacOS/system" to see usrset.txt.</dd>
+</dl>
+<p><b>3.</b><span> </span>Press the "play" button at the top of the window to see the robots executing motion plans.</p>
+<p><img alt="" height="459" src="/images/700px-VREP-motion-planning.png" width="700"/></p>
+<p><b>4.</b><span> </span>We will be using several custom scenes in this specialization. You should download the .zip folder from<span> </span><a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction" title="V-REP Introduction">V-REP Introduction</a><span> </span>and unzip it. The scenes include: interactive UR5 (Scene 1), csv animation UR5 (Scene 2), interactive youBot (Scene 3), and csv animation youBot (Scene 4). The Universal Robots UR5 is a 6-joint robot arm and the KUKA youBot is a mobile manipulator consisting of a 5-joint robot arm mounted on an omnidirectional robot base with 4 mecanum wheels. "Interactive" means that you can move sliders that represent the joint positions of the robot, and you'll see the robot move in response. "csv animation" means that the scene expects you to provide a "comma-separated values" (csv) file. A row of the file is a set of joint values, separated by commas, corresponding to the configuration of the robot at a particular instant. Subsequent rows are the configuration of the robot at later times, and the csv file is played as an animation by V-REP.</p>
+<p>Included in the .zip folder are the scene files themselves as well as example input files for some of the scenes. You should make sure your unzipped folder is in a convenient, memorable location on your computer, as you will have to type in the full path to the input files when you use them in the V-REP scenes that require them.</p>
+<p><b>5.</b><span> </span>If you currently have a simulation running in V-REP, press the "stop" button to stop it. Then choose File &gt; Open scene... and open the interactive UR5 scene (Scene1_UR5.ttt) you downloaded. Press the "play" button, choose the "Joint Angle Sliders" tab, and experiment with moving the sliders to see how the joints move.</p>
+<p><img alt="" height="429" src="/images/700px-Vrep-im3.jpg" width="700"/></p>
+<p><b>6.</b><span><span> </span>Open and run (press "play") the youBot csv animation scene (Scene4_youBot_csv.ttt). Load the example .csv file for the youBot. You will have to provide the full path to the file; in the example on the Mac below, the path is "/Users/kevin/V-REP_scenes/Scene4_example.csv". After clicking "Open File," press the "Play" button just below where you entered the file path. You should see the mobile robot continually executing the trajectory encoded in the .csv file.</span></p>
+<p><span><img alt="" height="496" src="/images/700px-Vrep-im4.png" width="700"/></span></p>
+<p>The first line of the .csv file is</p>
+<p>0,-0.526,0,0,-0.785,0.785,-1.571,0,0,0,0,0</p>
+<p>where the comma-separated values represent: phi angle of mobile robot base, x position of mobile robot base, y position of mobile robot base, joint1, joint2, joint3, joint4, joint5, wheel1, wheel2, wheel3, wheel4. The angles of the wheels are included so you can see the wheels rotating as the robot moves.</p>
+<dl>
+<dd><b>Important note regarding csv file format:</b><span> </span>The example csv files included for use with the csv scenes assume that periods, not commas, are used as decimal points. So pi is written as 3.14, not as 3,14. If you are using Linux and your region settings are set to a region that uses commas as the decimal separator, one solution, suggested by a Coursera student, is to invoke V-REP using US English settings:</dd>
+</dl>
+<pre>LC_NUMERIC=en_US.UTF-8 ./vrep.sh
+</pre>
+<dl>
+<dd>Another option, also suggested by a Coursera student, is to open your Linux "System Settings" -&gt; "Language support" -&gt; "Regional Formats" tab. After changing the region to "English (United States)", log out and back in for the change to take effect.</dd>
+</dl>
+<p><b>7.</b><span> </span>During this specialization, you will have to generate videos of V-REP visualizations. We have found it easiest to use screenshot-video tools for your operating system. On the Mac, you can use Quicktime to record videos from the screen. On Linux, you can use<span> </span><a class="external text" href="http://www.maartenbaert.be/simplescreenrecorder/" rel="nofollow">SimpleScreenRecorder</a><span> </span>or<span> </span><a class="external text" href="http://recordmydesktop.sourceforge.net/about.php" rel="nofollow">recordMyDesktop</a>, for example. On Windows, you can use<span> </span><a class="external text" href="https://icecreamapps.com/Screen-Recorder/" rel="nofollow">Screen Recorder</a>.</p>
+<p>V-REP provides its own tool, which you can find at Tools&gt;Video recorder. You may need to stop the current scene to be able to configure the video recorder. You can find more information on recording V-REP movies here:<span> </span><a class="external free" href="http://www.coppeliarobotics.com/helpFiles/en/aviRecorder.htm" rel="nofollow">http://www.coppeliarobotics.com/helpFiles/en/aviRecorder.htm</a>.</p>
+<p>Try recording and saving a 10 second movie of the youBot animating the example .csv file. Your video should be of reasonable quality, but the compression should be such that the video doesn't use too much memory. For example, a few MB is a reasonably sized short video.</p>
+<p><b>When you're finished with the tasks above...</b></p>
+<p><b>Congratulations!</b><span> </span>Your MR code library and the V-REP simulator are ready to use. Do not move on to the rest of the course until these are working for you.</p>
+<p>In this specialization we will mostly be using V-REP to visualize the motion of robot arms and wheeled mobile robots. For example, we use V-REP to animate your solutions to inverse kinematics, to display the dynamic motion of a robot arm according to dynamics calculations that you will write, to animate the results of path planners you develop, and to simulate a mobile manipulator manipulating an object.</p>
+<p>The<span> </span><b>Modern Robotics</b><span> </span>specialization does not teach how to use V-REP in detail, and it uses only a small fraction of V-REP's capabilities. If you want to learn more, you can find links to documentation<span> </span><b><a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction#Useful_Resources" title="V-REP Introduction">at the bottom of this page</a>.</b></p>
+<h2>V-rep Introduction</h2>
+<p>source: <a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction">http://hades.mech.northwestern.edu/index.php/V-REP_Introduction</a> </p>
+<p><img alt="" height="250" src="/images/398px-V-rep-sim.jpg" width="398"/></p>
+<p><b>Note: V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
+<p>On<span> </span><a class="external text" href="http://www.coppeliarobotics.com/index.html" rel="nofollow">V-REP's homepage</a><span> </span>the program is described as</p>
+<pre>  ...the Swiss army knife among robot simulators: you won't find a simulator with more functions, features, or more elaborate APIs.
+</pre>
+<p>V-REP's strength comes from several features:</p>
+<ol>
+<li>V-REP provides a unified framework combining many powerful internal and external libraries that are often useful for robotics simulations. This includes dynamic simulation engines, forward/inverse kinematics tools, collision detection libraries, vision sensor simulations, path planning, GUI development tools, and built-in models of many common robots.</li>
+<li>V-REP is highly extensible. V-REP developers provide an API that allows one to write custom plugins that add new features. You can embed<span> </span><a class="external text" href="https://en.wikipedia.org/wiki/Lua_(programming_language)" rel="nofollow">Lua</a><span> </span>scripts directly into a simulation scene that, for example, process simulated sensor data, run control algorithms, implement user interfaces, or even send data to a physical robot. They also provide a remote API that allows one to develop standalone applications in many programming languages that are able to pass data in and out of a running V-REP simulation.</li>
+<li>V-REP is cross-platform, mostly open-source, and provides a free educational license.</li>
+</ol>
+<p>The purpose of this page is not to teach you how to use V-REP. Rather it is to describe demonstration scenes that have been developed to support learning from the book<span> </span><b><a href="http://hades.mech.northwestern.edu/index.php/Modern_Robotics" title="Modern Robotics">Modern Robotics</a></b>. If you are interested to learn more about V-REP, check out the<span> </span><a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction#Useful_Resources">Useful Resources</a><span> </span>section below.</p>
+<h4><span class="mw-headline" id="Demonstration_V-REP_Scenes">Demonstration V-REP Scenes</span></h4>
+<p><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip"><b>DOWNLOAD ALL DEMONSTRATION V-REP SCENES AND INPUT FILES DESCRIBED BELOW.</b></a></p>
+<p>To run any of the scenes below, the first step will be to<span> </span><a class="external text" href="http://www.coppeliarobotics.com/downloads.html" rel="nofollow">download V-REP</a><span> </span>for your operating system. You should download the latest non-limited EDUCATIONAL version. Next you will have to install V-REP. On Windows, you simply have an EXE that installs V-REP. On a Mac, you first need to unzip the download. The directory that is produced by unzipping the download contains a<span> </span><code>vrep.app</code><span> </span>directory that should allow you start V-REP through normal mechanisms, e.g., Finder/Spotlight/Launchpad. On Linux, you will need to extract the compressed tar archive (e.g., using a command like<span> </span><code>tar xvf V-REP_PRO_EDU_V3_3_2_64_Linux.tar.gz</code>). Then you need to change directories into the V-REP source directory and run the<span> </span><code>vrep.sh</code><span> </span>shell script.</p>
+<p>Once V-REP is open you will want to run one of the scenes below. To run any of them, you first run V-REP, then you click<span> </span><code>File-&gt;Open scene...</code><span> </span>and open one of the ttt files that are linked below. Then click either the<span> </span><i>Play</i><span> </span>button from the top toolbar or click<span> </span><code>Simulation-&gt;Start simulation</code><span> </span>and a GUI should pop up. Clicking the<span> </span><i>Stop</i><span> </span>button or<span> </span><code>Simulation-&gt;Stop simulation</code><span> </span>will close the GUI and stop the simulation.</p>
+<p>Most of the scenes feature a simulation of a kinematically-controlled, non-respondable robot.<span> </span><i>Kinematically controlled</i><span> </span>means that all dynamics (inertias, torques, friction, etc.) of the system are neglected. We specify a configuration of the robot and it is instantaneously "teleported" to the new configuration.<span> </span><i>Non-respondable</i><span> </span>means that the links of the robot are not capable of interacting with the world or each other through collisions. In other words, we can put the robot in configurations that result in self-collisions.</p>
+<p>The "interactive" scenes allow you to visualize the robot as you change its configuration using sliders. The "CSV" scenes allow animations of a robot based on a trajectory stored in a comma-separated values file, where each line corresponds to a timestep and consists of comma-separated numbers specifying the robot's configuration at that timestep. There are no joint limits in the "CSV" scenes.</p>
+<p><a href="http://hades.mech.northwestern.edu/index.php/Writing_a_CSV_File" title="Writing a CSV File"><b>This page has information on writing csv files in Python, MATLAB, and Mathematica.</b></a></p>
+<p>The CSV mobile manipulation scene is a partly dynamically-controlled simulation of a respondable<span> </span><a class="external text" href="http://www.youbot-store.com/" rel="nofollow">youBot</a><span> </span>from<span> </span><a class="external text" href="https://www.kuka.com/en-us" rel="nofollow">KUKA</a>.</p>
+<dl>
+<dd><b>Important note regarding csv file format:</b><span> </span>The example csv files included below for use with the csv scenes assume that periods, not commas, are used as decimal points. So pi is written as 3.14, not as 3,14. If you are using Linux and your region settings are set to a region that uses commas as the decimal separator, one solution, suggested by a Coursera student, is to invoke V-REP using US English settings:</dd>
+</dl>
+<pre>LC_NUMERIC=en_US.UTF-8 ./vrep.sh
+</pre>
+<dl>
+<dd>Another option, also suggested by a Coursera student, is to open the Linux "System Settings" -&gt; "Language support" -&gt; "Regional Formats" tab. After changing the region to "English (United States)", log out and back in for the change to take effect.</dd>
+</dl>
+<p>In each scene, there is a single Lua script called a<span> </span><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/childScripts.htm" rel="nofollow">non-threaded child script</a>. When the scene is first run, there is a function that is called that sets up the GUI and creates variables that are going to be needed later on in the simulation. Then during every step of the simulation the<span> </span><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/mainScript.htm" rel="nofollow">main script</a>, which is part of every V-REP scene, runs an "actuation" function from the child script. This actuation function is responsible for processing all of the changes to the GUI since the last time it was called (buttons clicked, label updates, etc.), and for sending joint commands to the simulated robot. Technically, there is also a "sensing" function in the child script that gets called by the main script, but in each of these scenes, the sensing function is empty. The GUIs are all built with V-REP's<span> </span><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/customUIPlugin.htm" rel="nofollow">Qt-based custom UI framework</a>.</p>
+<h4><span class="mw-headline" id="Scene_1:_Interactive_UR5">Scene 1: Interactive UR5</span></h4>
+<p><span class="mw-headline"><img alt="" height="150" src="/images/142px-Ur5-img.png" width="142"/></span></p>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p>This scene helps you visualize a<span> </span><a class="external text" href="https://www.universal-robots.com/products/ur5-robot/" rel="nofollow">UR5 robot</a><span> </span>from<span> </span><a class="external text" href="https://www.universal-robots.com/" rel="nofollow">Universal Robots</a>. The model of the UR5 was created by importing a URDF from the ROS-Industrial<span> </span><a class="external text" href="https://github.com/ros-industrial/universal_robot/tree/indigo-devel/ur_description/urdf" rel="nofollow">ur5_description package</a>. The GUI in this scene features two tabs. One tab lets you drag sliders to modify the joint angles of each joint, and the other tab allows you to specify comma-separated angles for all 6 joints in an editable text box and ask for the SE(3) transformation from the base frame to the end-effector frame. The frames attached to the base and end-effector are persistently displayed (x-axis in red, y-axis in green, z-axis in blue). Note that all angles are specified in radians.</p>
+<p>Scene 1 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene1_UR5.ttt: the V-REP scene file.</li>
+</ul>
+<p></p>
+<h4><span class="mw-headline" id="Scene_2:_CSV_Animation_UR5">Scene 2: CSV Animation UR5</span></h4>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p>This scene animates the motion of the UR5 robot based on a csv file representing the trajectory of the robot. Each row of the csv file represents a timestep and each column of the csv file is the joint angle through time for one of the joints (first column is joint 1, last column is joint 6).</p>
+<p>Scene 2 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene2_UR5_csv.ttt: the V-REP scene file.</li>
+<li>Scene2_example.csv: an example input file.</li>
+</ul>
+<p>See the note above about making sure your language settings are appropriate to properly read csv files in Linux.</p>
+<h4><span class="mw-headline" id="Scene_3:_Interactive_youBot">Scene 3: Interactive youBot</span></h4>
+<p><span class="mw-headline"><img alt="" height="150" src="/images/169px-Youbot-fig.png" width="169"/></span></p>
+<p><b>(Updated August 2018, to match the frame conventions used in the textbook and in Scene 4, animation of the youBot.)</b></p>
+<p>This scene helps you visualize a youBot mobile manipulator from KUKA. The KUKA youBot consists of a mecanum-wheel omnidirectional base and a 5R robot arm. Move the mobile base of the robot and the joints of the robot using sliders, and inspect the SE(3) representation of the resulting end-effector coordinate frame. All angles are represented in radians, and linear distances are represented in meters. The following frames are illustrated: the world frame {s}, a frame fixed to the center of the mobile chassis {b}, a frame fixed at the base of the robot arm {0}, and a frame fixed to the end-effector {e}.</p>
+<p>Scene 3 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene3_youBot.ttt: the V-REP scene file.</li>
+</ul>
+<p></p>
+<h4><span class="mw-headline" id="Scene_4:_CSV_Animation_youBot">Scene 4: CSV Animation youBot</span></h4>
+<p><span class="mw-headline"><img alt="" height="150" src="/images/211px-Youbot-top-view.png" width="211"/></span></p>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p>This scene animates the motion of the youBot based on a csv file representing the trajectory of the robot. Each row of the csv file represents a timestep and each column of the csv file is a configuration variable through time. The csv file has either 12 or 13 columns. Columns 1-3 represent the mobile base configuration variables, ordered as (phi, x, y), where phi is the angle of the base and (x, y) is the location of its center. Columns 4-8 represent the five arm joint angles, joint 1 through joint 5. Columns 9-12 represent the wheel angles, where wheel 1 is column 9 and wheel 4 is column 12, and the numbering of the wheels is shown in the figure on the right. Column 13 is optional. If it is present, then 0 means the gripper is open and 1 means the gripper is closed. If there is no column 13, then the gripper is open by default. All angles are specified in radians.</p>
+<p>Scene 4 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene4_youBot_csv.ttt: the V-REP scene file.</li>
+<li>Scene4_example.csv: an example input file.</li>
+<li>Scene4_base_motions: this folder has five basic motions of the youBot mobile base, showing the correct wheel motions associated with some basic motions of mobile base. You can check that your wheeled mobile base kinematics (or odometry) are correct by comparing your wheel motions to the wheel motions in these .csv files.
+<ul>
+<li>yb1.csv: Constant speed spin in place (wheels on the left side and right side of the robot move at opposite speeds).</li>
+<li>yb2.csv: Constant speed forward motion (all wheels move at the same speed).</li>
+<li>yb3.csv: Constant speed sideways motion (wheels on opposite corners move at the same speed).</li>
+<li>yb4.csv: Constant speed diagonal motion (wheels 2 and 4 move at the same speed while wheels 1 and 3 are stationary).</li>
+<li>yb5.csv: Constant speed diagonal motion (wheels 1 and 3 move at the same speed while wheels 2 and 4 are stationary).</li>
+</ul>
+</li>
+</ul>
+<p>See the note above about making sure your language settings are appropriate to properly read csv files in Linux.</p>
+<p></p>
+<h4><span class="mw-headline" id="Scene_5:_CSV_Motion_Planning_Kilobot">Scene 5: CSV Motion Planning Kilobot</span></h4>
+<p><span class="mw-headline"><img alt="" height="150" src="/images/212px-Kilobot-img.png" width="212"/></span></p>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p>This scene allows you to visualize motion planning on an undirected graph using graph-search techniques such as A*. To visualize the planned motion, we are using the<span> </span><a class="external text" href="https://www.kilobotics.com/" rel="nofollow">kilobot</a><span> </span>robot moving in a planar square environment of dimensions -0.5 &lt;= x &lt;= 0.5 and -0.5 &lt;= y &lt;= 0.5. Obstacles are represented as cylinders, and the graph itself is illustrated as blue nodes with yellow edges. The path that the kilobot actually follows is indicated by green edges, and the goal node is in red. See the image to the right.</p>
+<p>This scene does not do motion planning. Instead, it displays the output of your motion planner. It expects you to provide the path to a folder with four files, named nodes.csv, edges.csv, path.csv, and obstacles.csv:</p>
+<ul>
+<li>nodes.csv: If the graph has N nodes, then this file has N rows. Each row is of the form ID,x,y,heuristic-cost-to-go. ID is the unique integer ID number of the node, and these ID numbers should take values 1 through N. x, y are the (x,y) coordinates of the node in the plane. heuristic-cost-to-go is an optimistic approximation of the shortest path from this node to the goal node (e.g., the Euclidean distance to the goal node). This information is useful for A-star search but is not represented in the visualization of the path.</li>
+</ul>
+<ul>
+<li>edges.csv: If the graph has E edges, then this file has E rows. Each row is of the form ID1,ID2,cost. ID1 and ID2 are the node IDs of the nodes connected by the edge. cost is the cost of traversing that edge. This file can be empty if you do not wish to display edges.</li>
+</ul>
+<ul>
+<li>path.csv: This file specifies the solution path in the graph, and it is a single line, of the form ID1,ID2,... The first number is the ID of the first node in the solution path, and the last number is the ID of the last node in the solution path. If there is no solution to the motion planning problem, the path can consist of a single ID number, the ID of the node where the robot starts (and stays).</li>
+</ul>
+<ul>
+<li>obstacles.csv: This file specifies the locations and diameters of the circular obstacles. Each row is x, y, diameter, where (x,y) is the center of the obstacle and diameter is the diameter of the obstacle. This file can be empty if there are no obstacles.</li>
+</ul>
+<p>Nothing prevents you from providing files with nodes or edges inside obstacles. The path.csv file is the output of a graph search planner. Inputs to the planner could be the obstacles.csv file and a specification of the positions of the start and goal nodes, or it could be the nodes.csv and edges.csv files and a specification of the start and goal nodes, or it could be other information, depending on your planner. But in any case, this scene requires the four files above for the visualization.</p>
+<p>Scene 5 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene5_motion_planning.ttt: the V-REP scene file.</li>
+<li>Scene5_example.zip: a directory containing example input files nodes.csv, edges.csv, path.csv, and obstacles.csv.</li>
+</ul>
+<p>See the note above about making sure your language settings are appropriate to properly read csv files in Linux.</p>
+<p>You may be interested in:</p>
+<ul>
+<li><a href="http://hades.mech.northwestern.edu/index.php/A*_Graph_Search_Project" title="A* Graph Search Project">A description of an A* search project using this scene.</a></li>
+<li><a href="http://hades.mech.northwestern.edu/index.php/Sampling-Based_Planning" title="Sampling-Based Planning">A description of a sampling-based planning project using this scene.</a></li>
+</ul>
+<p></p>
+<h4><span class="mw-headline" id="Scene_6:_CSV_Mobile_Manipulation_youBot">Scene 6: CSV Mobile Manipulation youBot</span></h4>
+<p><span class="mw-headline"><img alt="" height="150" src="/images/230px-Youbot-capstone.png" width="230"/></span></p>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p><a href="http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone" title="Mobile Manipulation Capstone"><b>This page has a description of a capstone mobile manipulation project using this scene, as well as more details regarding the operation of the physics engines, the kinematics of the youBot, properties of the end-effector (gripper), and properties of the cube.</b></a></p>
+<p>This scene has a youBot mobile manipulator and a cube. The youBot is expected to pick up the cube and put it down at a goal location ("pick and place"). This scene animates a user-specified csv file specifying the motion of the youBot, much as in Scene 4, except now the gripper interacts dynamically with the cube. Each row of the csv file has 13 variables: 3 for the chassis configuration (phi, x, y), 5 for the arm joint angles, 4 for the wheel angles (where the wheels are numbered as shown in Scene 4), and 1 for the gripper state (0 = open, 1 = closed). Unlike previous csv visualization scenes where V-REP simply makes a movie of the configurations, and there is no notion of the simulated time between successive lines in the csv file, this V-REP scene is performing a dynamic simulation, so the time between each line is important to determine the dynamic behavior.<span> </span><b>The simulated time between each line of the csv file is 0.01 seconds (10 milliseconds).</b></p>
+<p>The gripper of the youBot and the cube are dynamically modeled to simulate practical pick-and-place. In other words, if the gripper does not close on the block properly, it may slide away, and if you open the gripper when it is holding a block, the block will fall to the floor. The interaction between the gripper and the block is governed by a "physics engine," which approximately accounts for friction, mass, inertial, and other properties. The default physics engine for this scene is ODE.</p>
+<p>Gripper opening and closing may take up to approximately 0.625 seconds. Assume, for example, that the first 100 lines of your csv file have the gripper state as 0 (open). Then, on line 101, you change the gripper state to 1 (closed). This transition from 0 to 1 initiates the closing action, but the closing may not actually complete for 0.625 seconds. So you should keep the gripper state at 1 for at least 63 consecutive lines of your csv file to ensure that the gripper closes all the way. Similarly, it may take up to 0.625 seconds for the gripper to open, so you should keep the gripper state at 0 for at least 63 consecutive lines to ensure that the gripper opens all the way. Gripper opening/closing actually terminates when a force threshold is reached on the fingers or the fingers have completed the motion.</p>
+<p>You can set the initial and goal configurations of the cube with a GUI inside the scene, but the default initial configuration is<span> </span><img alt="(x,y,\theta) = (1~\text{m}, 0~\text{m}, 0~\text{rad})" class="tex" src="http://hades.mech.northwestern.edu/images/math/c/e/1/ce1884669139db0006e068c0c3f7bff0.png"/><span> </span>and the goal configuration is at<span> </span><img alt="(x,y,\theta) = (0~\text{m},-1~\text{m},-\pi/2~\text{rad})" class="tex" src="http://hades.mech.northwestern.edu/images/math/e/8/3/e83e7452696f11cc5e88e3cb32ba98f5.png"/>.</p>
+<p>Scene 6 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene6_youbot_cube.ttt: the V-REP scene file.</li>
+<li>Scene6_example.csv: an example input file solving the task when the cube's initial and goal configurations are the defaults.</li>
+</ul>
+<p>See the note above about making sure your language settings are appropriate to properly read csv files in Linux.</p>
+<p></p>
+<h4><span class="mw-headline" id="Scene_7:_CSV_Animation_MTB">Scene 7: CSV Animation MTB</span></h4>
+<div class="floatright"><a class="image" href="http://hades.mech.northwestern.edu/index.php/File:MTB-img.png"><img alt="MTB-img.png" height="150" src="http://hades.mech.northwestern.edu/images/thumb/7/7c/MTB-img.png/171px-MTB-img.png" width="171"/></a></div>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p>This scene simulates a RRPR robot. It animates a csv file containing a trajectory of joint angles. Each column of the csv file is the joint angle/length through time for one of the joints (in the order of RRPR). A single row of the csv file represents a complete configuration of the robot at a particular time. The prismatic joint (P) has the joint limit range [0, 0.2]. The assumed time step between rows is equal to the time step that V-REP uses for simulation; the default is 0.05 seconds.</p>
+<p>Scene 7 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene7_MTB_csv.ttt: the V-REP scene file.</li>
+<li>Scene7_example.csv: An example input file.</li>
+</ul>
+<p>See the note above about making sure your language settings are appropriate to properly read csv files in Linux.</p>
+<p></p>
+<h4><span class="mw-headline" id="Scene_8:_CSV_youBot_End-Effector_Animation">Scene 8: CSV youBot End-Effector Animation</span></h4>
+<div class="floatright"><a class="image" href="http://hades.mech.northwestern.edu/index.php/File:Capstone-gripper.png"><img alt="Capstone-gripper.png" height="150" src="http://hades.mech.northwestern.edu/images/thumb/7/7a/Capstone-gripper.png/274px-Capstone-gripper.png" width="274"/></a></div>
+<p><b>(This scene had minor updates in August 2018.)</b></p>
+<p><a href="http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone" title="Mobile Manipulation Capstone"><b>This page has a description of a capstone mobile manipulation project (specifically Milestone 2) using this scene.</b></a></p>
+<p>This scene is used in<span> </span><a href="http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone" title="Mobile Manipulation Capstone">Milestone 2 of the capstone mobile manipulation project</a>. It animates the motion of the gripper of the youBot only (the rest of the youBot is not shown), and this scene is used to validate the planned motion of the gripper. Each line of the csv file has 13 comma-separated values: 12 from the top three rows of the transformation matrix<span> </span><span class="texhtml" dir="ltr"><i>T</i><sub><i>s</i><i>e</i></sub></span><span> </span>representing the configuration of the end-effector frame {e} relative to the space frame {s}, and 1 representing the gripper state (0 = open, 1 = closed). In other words, one line of the csv file is</p>
+<pre>r11, r12, r13, r21, r22, r23, r31, r32, r33, px, py, pz, gripper state
+</pre>
+<p>where the transformation matrix<span> </span><span class="texhtml" dir="ltr"><i>T</i><sub><i>s</i><i>e</i></sub></span><span> </span>is</p>
+<p><img alt=" T_{se} = \left[\begin{array}{cccc} r_{11} &amp; r_{12} &amp; r_{13} &amp; p_x \\ r_{21} &amp; r_{22} &amp; r_{23} &amp; p_y \\ r_{31} &amp; r_{32} &amp; r_{33} &amp; p_z \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]. " class="tex" src="http://hades.mech.northwestern.edu/images/math/8/8/b/88bcc8abc721e889302a93964b8f536e.png"/></p>
+<p>V-REP will animate the motion of the end-effector based on this csv file. It will also show the cube that is to be manipulated by the gripper, at its initial and goal configurations.</p>
+<pre>The gripper does not dynamically interact with the cube, however.  
+</pre>
+<p><a class="external text" href="https://youtu.be/8d_cYwV58lI" rel="nofollow"><b>This video shows an example of an animation created by this scene</b></a>. In this video, the gripper opens and closes instantly, but this scene will show the gripper taking up to 0.625 seconds to open and close, just as in Scene 6.</p>
+<p>Scene 8 files in the<span> </span><a class="internal" href="http://hades.mech.northwestern.edu/images/5/5c/V-REP_scenes.zip" title="V-REP scenes.zip">download of all of the demonstration scenes</a>:</p>
+<ul>
+<li>Scene8_gripper_csv.ttt: the V-REP scene file.</li>
+<li>Scene8_example.csv: an example input file solving the task when the cube's initial and goal configurations are the defaults.</li>
+</ul>
+<p>See the note above about making sure your language settings are appropriate to properly read csv files in Linux.</p>
+<p></p>
+<h4><span class="mw-headline" id="Switching_Between_Scenes">Switching Between Scenes</span></h4>
+<p>Press the<span> </span><i>Stop</i><span> </span>button to stop the simulation of the current scene, then choose<span> </span><code>File&gt;Open scene...</code>. You can also use<span> </span><code>File&gt;Open recent scene</code><span> </span>to switch to a scene you previously loaded. Then you press the<span> </span><i>Play</i><span> </span>button to run the scene. Alternatively, stop the simulation and then press the<span> </span><code>Scenes</code>button in the top toolbar to see which scenes are currently open and select one to be in the foreground. The scene selector toolbar button may also be used to switch between opened scenes. Read more<span> </span><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/scenes.htm" rel="nofollow">here</a>.</p>
+<h4><span class="mw-headline" id="Recording_a_Movie">Recording a Movie</span></h4>
+<p>V-REP comes with a video recorder. Go to<span> </span><code>Tools&gt;Video recorder</code>. You may need to stop the current scene to be able to configure the video recorder. You can find more information on recording V-REP movies here:<span> </span><a class="external free" href="http://www.coppeliarobotics.com/helpFiles/en/aviRecorder.htm" rel="nofollow">http://www.coppeliarobotics.com/helpFiles/en/aviRecorder.htm</a>.</p>
+<p>A simpler option may be to just use your computer's screen recording software. On the Mac, you can use Quicktime. On Linux, you can use<span> </span><a class="external text" href="http://www.maartenbaert.be/simplescreenrecorder/" rel="nofollow">SimpleScreenRecorder</a><span> </span>or<span> </span><a class="external text" href="http://recordmydesktop.sourceforge.net/about.php" rel="nofollow">recordMyDesktop</a>. On Windows, you can use<span> </span><a class="external text" href="http://icecreamapps.com/Screen-Recorder/" rel="nofollow">Screen Recorder</a>. Or you may have your own solution.</p>
+<h4><span class="mw-headline" id="Exploring_Other_Scenes">Exploring Other Scenes</span></h4>
+<p>You are encouraged to explore some of the (quite impressive) scenes that come pre-loaded with V-REP. You can find these scenes in the<span> </span><code>scenes</code>directory under the V-REP directory. Running and studying these can be a great way to learn more about the V-REP capabilities and to understand how to put together more complex scenes.</p>
+<h4><span class="mw-headline" id="Useful_Resources">Useful Resources</span></h4>
+<ul>
+<li><a class="external text" href="http://www.coppeliarobotics.com/resources.html" rel="nofollow">V-REP User Manual and Other Resources</a></li>
+<li><a class="external text" href="http://www.coppeliarobotics.com/assets/v-repoverviewpresentation.pdf" rel="nofollow">V-REP Overview Presentation</a></li>
+<li><a class="external text" href="http://www.coppeliarobotics.com/videos.html" rel="nofollow">V-REP Videos Page</a></li>
+<li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm" rel="nofollow">V-REP Tutorial Series</a></li>
+<li><a class="external text" href="http://www.coppeliarobotics.com/features.html" rel="nofollow">Overview of V-REP Features</a></li>
+<li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/apiOverview.htm" rel="nofollow">V-REP API Documentation</a><span> </span>These are all functions that can either be called directly from a custom C/C++ plugin or through a Lua embedded script.</li>
+<li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm" rel="nofollow">Remote API Documentation</a><span> </span>The Remote API is how V-REP enables scripts and programs written in other languages (MATLAB, Java, Python, etc.) to interact with a V-REP simulation</li>
+</ul><h1>參考資料</h1>
+<p><a href="http://hades.mech.northwestern.edu/index.php/ME_449_Robotic_Manipulation">http://hades.mech.northwestern.edu/index.php/ME_449_Robotic_Manipulation</a> </p>
+<p style="padding-left: 30px;"><a href="/downloads/AppendixE-linear-algebra-review-Sept21-2018.pdf">linear algebra.pdf</a></p>
+<p><a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
+<p style="padding-left: 30px;"><a href="/downloads/ModernRobotics_lib.7z">Modern Robotics library.7z</a> (<a href="https://github.com/NxRLab/ModernRobotics">https://github.com/NxRLab/ModernRobotics</a>)</p>
+<p style="padding-left: 30px;"><a href="https://github.com/NxRLab/ModernRobotics">https://github.com/NxRLab/ModernRobotics</a> </p>
+<p style="padding-left: 30px;"><a href="/downloads/MR_practice_exercises.pdf">MR_practice_exercises.pdf</a></p>
+<p><a href="http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone">http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone</a> </p>
+<h4>Springer Handbook of Robotics </h4>
+<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-319-32552-1">https://link.springer.com/book/10.1007/978-3-319-32552-1</a> </p>
+<p style="padding-left: 30px;"><a href="http://handbookofrobotics.org/view-chapter/videodetails/0">http://handbookofrobotics.org/view-chapter/videodetails/0</a> </p>
