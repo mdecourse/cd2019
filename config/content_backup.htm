@@ -6,15 +6,14 @@
 <h4>107學年教育目標:</h4>
 <p>本課程延續四技部計算機程式與電腦輔助設計實習之教學內容, 探討如何在網際協同環境進行機械產品開發.</p>
 <h4>107-2學期教育目標:</h4>
-<p>從 Intel-based 電腦硬體的組裝、安裝操作系統、配置網路連線到設定 <a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> , 引導學員學習如何運用電腦與網路系統, 自行架構符合機械協同設計流程使用之網際內容管理伺服系統. 之 後再利用此一網際協同環境進行機械產品開發.</p>
+<p>使用可攜程式系統, 以及 <a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> 與<a href="https://git-scm.com/download/win"> portable Git</a> 管理各學員與分組的動態與靜態網際內容管理系統, 同時利用 <a href="https://www.onshape.com/">Onshape</a> 與 <a href="http://www.coppeliarobotics.com/">V-rep</a> 執行機電資整合產品開發, 當面臨各協同設計階段所遭遇問題時, 各學員可利用客製化程式加以解決.</p>
 <h4>達成學期教育目標之評量方式與標準:</h4>
 <p>評分比例:</p>
 <p style="padding-left: 30px;">學員出席 (20%)</p>
-<p style="padding-left: 30px;">電腦組裝與操作系統安裝 (10%)</p>
-<p style="padding-left: 30px;">網路連線配置與設定  (10%)</p>
-<p style="padding-left: 30px;">Github 倉儲與 CMSimfly 配置 (30%)</p>
-<p style="padding-left: 30px;">CMSimfly 操作 (20%)</p>
-<p style="padding-left: 30px;">CMSimfly 開發 (10%)</p>
+<p style="padding-left: 30px;">Github 倉儲管理  (20%)</p>
+<p style="padding-left: 30px;">Onshape 協同操作 (20%)</p>
+<p style="padding-left: 30px;">V-rep 模擬 (30%)</p>
+<p style="padding-left: 30px;">程式開發 (10%)</p>
 <p>評分方式:</p>
 <p style="padding-left: 30px;">學員自我評量<span> (30%)</span></p>
 <p style="padding-left: 30px;">分組自我評量 (30%)</p>
@@ -24,13 +23,29 @@
 <p style="padding-left: 30px;">操作錄影</p>
 <p style="padding-left: 30px;">學員實習</p>
 <p style="padding-left: 30px;">分組報告</p>
-<h1>V-rep</h1>
+<h1>CMS</h1>
+<p>協同產品設計實習的三項內容管理系統 (Content Management Systems) 包含</p>
+<p><a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> (循序頁面電子書) - 各組網際協同產品設計規劃與使用說明電子書</p>
+<p><a href="https://revealjs.com/#/">Reveal</a> (網際簡報系統) - 每一協同設計階段完成的簡要報告</p>
+<p><a href="https://blog.getpelican.com/">Pelican Blog</a> (靜態網誌) - 依照日期紀錄各協同階段工作內容與結論</p>
+<h4>開發要點</h4>
+<ol>
+<li>多人協同編輯的 CMSimfly</li>
+<li>近端網際 Reveal 編輯環境</li>
+<li>更容易使用的 Pelican 靜態網誌轉換系統</li>
+</ol>
+<p></p><h1>Onshape</h1>
+<h4>特性</h4>
+<p>現有免費的整合 CAX 系統, 應力分析, render, CAM?</p>
+<p>Featurescript 在協同產品開發流程中的角色</p>
+<p><a href="https://github.com/onshape">https://github.com/onshape</a> </p><h1>V-rep</h1>
 <p>source: <a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
 <p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
 <p><b>V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
 <p><b>1.</b><span> </span>Go to<span> </span><a class="external free" href="http://www.coppeliarobotics.com/" rel="nofollow">http://www.coppeliarobotics.com/</a><span> </span>and download and install the free V-REP PRO EDU software for your operating system.</p>
 <p><b>2.</b><span> </span>Launch V-REP and experiment with it. I suggest you choose File &gt; Open scene... and open one of the example "scenes" that comes with V-REP. V-REP "scenes" are specifications of environments, robots, and their actions, and when you press the "play" button the simulation begins. Experimenting with these scenes will show you some of the capabilities of V-REP. For example, you could choose the "motionPlanningAndGrasping.ttt" scene, as shown in the image below. (All scene files end in .ttt.)</p>
-<p><img alt="" height="534" src="/images/700px-VREP-demo-open.png" width="700"/></p><h2>Get started</h2>
+<p><img alt="" height="534" src="/images/700px-VREP-demo-open.png" width="700"/></p><h2>V-rep Tutorial</h2>
+<h2>Get started</h2>
 <p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
 <p><b>V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
 <p><b>1.</b><span> </span>Go to<span> </span><a class="external free" href="http://www.coppeliarobotics.com/" rel="nofollow">http://www.coppeliarobotics.com/</a><span> </span>and download and install the free V-REP PRO EDU software for your operating system.</p>
@@ -64,8 +79,7 @@
 <p><b>When you're finished with the tasks above...</b></p>
 <p><b>Congratulations!</b><span> </span>Your MR code library and the V-REP simulator are ready to use. Do not move on to the rest of the course until these are working for you.</p>
 <p>In this specialization we will mostly be using V-REP to visualize the motion of robot arms and wheeled mobile robots. For example, we use V-REP to animate your solutions to inverse kinematics, to display the dynamic motion of a robot arm according to dynamics calculations that you will write, to animate the results of path planners you develop, and to simulate a mobile manipulator manipulating an object.</p>
-<p>The<span> </span><b>Modern Robotics</b><span> </span>specialization does not teach how to use V-REP in detail, and it uses only a small fraction of V-REP's capabilities. If you want to learn more, you can find links to documentation<span> </span><b><a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction#Useful_Resources" title="V-REP Introduction">at the bottom of this page</a>.</b></p>
-<h2>V-rep Introduction</h2>
+<p>The<span> </span><b>Modern Robotics</b><span> </span>specialization does not teach how to use V-REP in detail, and it uses only a small fraction of V-REP's capabilities. If you want to learn more, you can find links to documentation<span> </span><b><a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction#Useful_Resources" title="V-REP Introduction">at the bottom of this page</a>.</b></p><h2>V-rep Introduction</h2>
 <p>source: <a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction">http://hades.mech.northwestern.edu/index.php/V-REP_Introduction</a> </p>
 <p><img alt="" height="250" src="/images/398px-V-rep-sim.jpg" width="398"/></p>
 <p><b>Note: V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
@@ -235,7 +249,21 @@
 <li><a class="external text" href="http://www.coppeliarobotics.com/features.html" rel="nofollow">Overview of V-REP Features</a></li>
 <li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/apiOverview.htm" rel="nofollow">V-REP API Documentation</a><span> </span>These are all functions that can either be called directly from a custom C/C++ plugin or through a Lua embedded script.</li>
 <li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm" rel="nofollow">Remote API Documentation</a><span> </span>The Remote API is how V-REP enables scripts and programs written in other languages (MATLAB, Java, Python, etc.) to interact with a V-REP simulation</li>
-</ul><h1>參考資料</h1>
+</ul><h1>CAX</h1>
+<p><a href="https://en.wikipedia.org/wiki/Computer-aided_technologies">Computer Aided Technology</a></p>
+<h2>FreeFem++</h2>
+<p><a href="https://freefem.org/">https://freefem.org/</a> </p>
+<p><a href="https://github.com/FreeFem/FreeFem-sources">https://github.com/FreeFem/FreeFem-sources</a> </p>
+<p><a href="https://github.com/FreeFem/FreeFem-doc-pdf">https://github.com/FreeFem/FreeFem-doc-pdf</a> </p>
+<h4>IDE</h4>
+<p style="padding-left: 30px;"><a href="https://www.ljll.math.upmc.fr/lehyaric/ffcs/">https://www.ljll.math.upmc.fr/lehyaric/ffcs/</a> </p>
+<h4>Topics in Scientific Computing</h4>
+<p style="padding-left: 30px;"><a href="http://www.math.pitt.edu/~sussmanm/3040Summer14/math3040.html">http://www.math.pitt.edu/~sussmanm/3040Summer14/math3040.html</a> </p><h2>FEniCS</h2>
+<p><a href="https://fenicsproject.org/">https://fenicsproject.org/</a> </p>
+<h4>Automated Solution of Differential Equations by the Finite Element Method - The FEniCS Book</h4>
+<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-642-23099-8">https://link.springer.com/book/10.1007/978-3-642-23099-8</a> </p>
+<h4>Solving PDEs in Python -The FEniCS Tutorial I</h4>
+<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-319-52462-7">https://link.springer.com/book/10.1007/978-3-319-52462-7</a> </p><h1>參考資料</h1>
 <p><a href="http://hades.mech.northwestern.edu/index.php/ME_449_Robotic_Manipulation">http://hades.mech.northwestern.edu/index.php/ME_449_Robotic_Manipulation</a> </p>
 <p style="padding-left: 30px;"><a href="/downloads/AppendixE-linear-algebra-review-Sept21-2018.pdf">linear algebra.pdf</a></p>
 <p><a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
@@ -243,6 +271,7 @@
 <p style="padding-left: 30px;"><a href="https://github.com/NxRLab/ModernRobotics">https://github.com/NxRLab/ModernRobotics</a> </p>
 <p style="padding-left: 30px;"><a href="/downloads/MR_practice_exercises.pdf">MR_practice_exercises.pdf</a></p>
 <p><a href="http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone">http://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone</a> </p>
+<p style="padding-left: 30px;"><a href="/downloads/V-REP_scenes.zip">V-rep scenes.zip</a></p>
 <h4>Springer Handbook of Robotics </h4>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-319-32552-1">https://link.springer.com/book/10.1007/978-3-319-32552-1</a> </p>
 <p style="padding-left: 30px;"><a href="http://handbookofrobotics.org/view-chapter/videodetails/0">http://handbookofrobotics.org/view-chapter/videodetails/0</a> </p>
