@@ -1,0 +1,108 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>CD2019</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<script src="tipuesearch_content.js"></script>
+<script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/css/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.with_border {
+    border: 3px solid red;
+}
+</style>
+
+<script type="text/javascript">
+/*shorthand of $(document).ready(function(){};); */
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+function doSearch() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true, minimumLength: 2
+     });
+}
+$(document).ready(doSearch);
+</script>
+
+</head><header><h1>2019 Spring 協同產品設計實習</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='Introduction.html'>Introduction</a><li><a href='CMS.html'>CMS</a><li><a href='Onshape.html'>Onshape</a><ul><li><a href='BOMs.html'>BOMs</a></li></ul><li><a href='V-rep.html'>V-rep</a><ul><li><a href='V-rep Tutorial.html'>V-rep Tutorial</a><li><a href='Get started.html'>Get started</a><li><a href='V-rep Introduction.html'>V-rep Introduction</a></li></ul><li><a href='Solvespace.html'>Solvespace</a><li><a href='CAX.html'>CAX</a><ul><li><a href='Math.html'>Math</a><li><a href='Range Software.html'>Range Software</a><li><a href='FreeFem++.html'>FreeFem++</a><li><a href='FEniCS.html'>FEniCS</a></li></ul><li><a href='參考資料.html'>參考資料</a></li></ul></nav><section><div id="tipue_search_content">CAX << <a href='CAX.html'>Previous</a> <a href='Range Software.html'>Next</a> >> Range Software<br /><h1>Math</h1>
+<h4>Real world application of Fourier Series:</h4>
+<p><a href="http://mathworld.wolfram.com/FourierSeries.html">http://mathworld.wolfram.com/FourierSeries.html</a></p>
+<p>A Fourier series is an expansion of a periodic function f(x) in terms of an infinite sum of sines and cosines. Fourier series make use of the orthogonality relationships of the sine and cosine functions. The computation and study of Fourier series is known as harmonic analysis and is extremely useful as a way to break up an arbitrary periodic function into a set of simple terms that can be plugged in, solved individually, and then recombined to obtain the solution to the original problem or an approximation to it to whatever accuracy is desired or practical.</p>
+<p>In particular, since the superposition principle holds for solutions of a linear homogeneous ordinary differential equation, if such an equation can be solved in the case of a single sinusoid, the solution for an arbitrary function is immediately available by expressing the original function as a Fourier series and then plugging in the solution for each sinusoidal component. In some special cases where the Fourier series can be summed in closed form, this technique can even yield analytic solutions.</p>
+<p>Any set of functions that form a complete orthogonal system have a corresponding generalized Fourier series analogous to the Fourier series. For example, using orthogonality of the roots of a Bessel function of the first kind gives a so-called Fourier-Bessel series.</p>
+<p><a href="http://math.stackexchange.com/questions/579453/real-world-application-of-fourier-series">http://math.stackexchange.com/questions/579453/real-world-application-of-fourier-series</a></p>
+<p><a href="https://www.quora.com/Why-are-Fourier-series-important-Are-there-any-real-life-applications-of-Fourier-series">https://www.quora.com/Why-are-Fourier-series-important-Are-there-any-real-life-applications-of-Fourier-series</a></p>
+<p>It turns out that (almost) any kind of a wave can be written as a sum of sines and cosines. So for example.</p>
+<h4>Areas that Fourier Series are useful:</h4>
+<p>1. Signal Processing. It may be the best application of Fourier analysis.</p>
+<p>2. Approximation Theory. We use Fourier series to write a function as a trigonometric polynomial.</p>
+<p>3. Control Theory. The Fourier series of functions in the differential equation often gives some prediction about the behavior of the solution of differential equation. They are useful to find out the dynamics of the solution.</p>
+<p>4. Partial Differential equation. We use it to solve higher order partial differential equations by the method of separation of variables.</p>
+<h4>Fourier analysis for designing better running shoes:</h4>
+<p>For a very specific example: One of our undergraduate students was taking data generated by a person running on a force plate. Since force exerted on your feet from running is for the most part periodic, she fit the data with a curve using Fourier analysis. The work that followed can be used to help develop better running shoes.</p>
+<h4>Sympy for Fourier Series analysis:</h4>
+<p><a href="http://docs.sympy.org/latest/modules/series/fourier.html">http://docs.sympy.org/latest/modules/series/fourier.html</a></p>
+<h4>Futher studies:</h4>
+<p><a href="http://jsjk.cn.nctu.edu.tw/JSJK/DSAS/DSAS_5_Fourier%20Transform%20and%20Laplace%20Transform.pdf">http://jsjk.cn.nctu.edu.tw/JSJK/DSAS/DSAS_5_Fourier%20Transform%20and%20Laplace%20Transform.pdf</a></p>
+<p><a href="http://electronics.stackexchange.com/questions/86489/relation-and-difference-between-fourier-laplace-and-z-transforms">http://electronics.stackexchange.com/questions/86489/relation-and-difference-between-fourier-laplace-and-z-transforms</a></p>
+<p><a href="http://www.ijser.org/researchpaper/Relation-between-Fourier--Laplace-and-Z-transforms.pdf">http://www.ijser.org/researchpaper/Relation-between-Fourier--Laplace-and-Z-transforms.pdf</a></p>
+<br />CAX << <a href='CAX.html'>Previous</a> <a href='Range Software.html'>Next</a> >> Range Software</div></section></div></body></html>

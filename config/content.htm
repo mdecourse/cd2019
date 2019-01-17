@@ -56,14 +56,69 @@
 <p><a href="/downloads/開解設計僵局.pdf">開解設計僵局.pdf</a></p>
 <p><a href="/downloads/技術提示1.pdf">技術提示1.pdf</a></p>
 <p><a href="/downloads/敏捷產品設計簡介.pdf">敏捷產品設計簡介.pdf</a></p>
+<p><a href="/downloads/NI_Mechatronics_Machine_Design_Guide.pdf">NI_Mechatronics_Machine_Design_Guide.pdf</a></p>
+<p>c-k theory: <a href="https://mde1a1.kmol.info/2017fall/wiki?name=c-k+design+theory">https://mde1a1.kmol.info/2017fall/wiki?name=c-k+design+theory</a> </p>
 <p></p><h1>V-rep</h1>
 <p>source: <a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
 <p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
 <p><b>V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
 <p><b>1.</b><span> </span>Go to<span> </span><a class="external free" href="http://www.coppeliarobotics.com/" rel="nofollow">http://www.coppeliarobotics.com/</a><span> </span>and download and install the free V-REP PRO EDU software for your operating system.</p>
 <p><b>2.</b><span> </span>Launch V-REP and experiment with it. I suggest you choose File &gt; Open scene... and open one of the example "scenes" that comes with V-REP. V-REP "scenes" are specifications of environments, robots, and their actions, and when you press the "play" button the simulation begins. Experimenting with these scenes will show you some of the capabilities of V-REP. For example, you could choose the "motionPlanningAndGrasping.ttt" scene, as shown in the image below. (All scene files end in .ttt.)</p>
-<p><img alt="" height="534" src="/images/700px-VREP-demo-open.png" width="700"/></p><h2>V-rep Tutorial</h2>
-<p><a href="http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm">http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm</a> </p><h2>Get started</h2>
+<p><img alt="" height="534" src="/images/700px-VREP-demo-open.png" width="700"/></p>
+<p><a href="/downloads/v-rep_remoteapi_ex.7z">v-rep_remoteapi_ex.7z</a></p><h2>V-rep Tutorial</h2>
+<p><a href="http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm">http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm</a> </p>
+<p>V-rep Tutorial:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/RZ-TCmL55c8" width="560"></iframe><span></span></p>
+<p>Line Following Robot:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/xI-ZEewIzzI" width="560"></iframe><span></span></p>
+<p>V-rep Scripts Writing:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/Zt21o1qsOB4" width="560"></iframe><span></span></p>
+<p>Python Robot Simulation:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/SQont-mTnfM" width="560"></iframe><span></span></p>
+<p>Path Planning:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/OfpB87pRoUk" width="560"></iframe><span></span></p>
+<p>Dynamic Module:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/h9DXTRUmEEE" width="560"></iframe><span></span></p>
+<p>V-rep Introduction and Bump Sensors:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/w68jmN1IBpo" width="560"></iframe><span></span></p>
+<p>Inverse Kinematics:</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" src="https://www.youtube.com/embed/X73NzCc2E2c" width="560"></iframe><span></span></p>
+<p>scene 模擬場景 - 包含環境與各種物件</p>
+<p>scene object 場景中的物件 [http://www.coppeliarobotics.com/helpFiles/en/objects.htm] 包含</p>
+<p>shape 零組件形體</p>
+<p>camera 攝影機</p>
+<p>light 光源</p>
+<p>dummy 虛體 - 由一個有方位的點表示,沒有形體內容但具有形體性質的特殊物件</p>
+<p>graph 圖形</p>
+<p>path 路徑</p>
+<p>mirror 鏡</p>
+<p>point cloud 點雲</p>
+<p>joint 軸</p>
+<p>proximity sensor 近接感測器</p>
+<p>vision sensor 視覺感測器</p>
+<p>force/torque sensor 力/矩感測器</p>
+<p>mill 銑</p>
+<p>octree 八叉樹狀結構</p>
+<p>model 場景中的模型</p>
+<p>page 頁 - 每一個場景至多內置 8 個頁面, 每一個頁面則可以內置不限數量的視圖 (views), 頁面可視為視圖的容器.</p>
+<p>view 視圖 - 透過攝影機、圖型或視覺感測器取的資料, 用於顯示場景內容.</p>
+<h4>Main Script</h4>
+<p>A main script is a simulation script. By default, each scene in V-REP will have one main script. It contains the basic code that allows a simulation to run. Without main script, a running simulation won't do anything.</p>
+<p>The main script is called at each simulation step exactly one time. In addition to that, it is called once during initialization (at the start of a simulation), and once during restoration (at the end of a simulation). Thus, the default main script is segmented in 3 parts:</p>
+<h4>the initialization part</h4>
+<p><span>: this part will be executed one time just at the beginning of a simulation. The code is in charge of preparing a simulation, etc.</span></p>
+<h4>the regular part</h4>
+<p><span>: this part will be executed at each simulation pass. The code is in charge of handling all the functionality of the simulator (inverse kinematics, proximity sensors, collision detection, dynamics, etc.) in a generic way. Two commands are of particular interest: simLaunchThreadedChildScripts and simHandleChildScripts. simLaunchThreadedChildScripts launches threaded child scripts, while simHandleChildScripts runs non-threaded child scripts. Without those commands, child scripts won't be executed, and specific model functionality or behavior won't operate. The regular part is divided into an actuation (or action/reaction) section and a sensing (or probing) section.</span></p>
+<h4>the restoration part</h4>
+<p><span>: this part will be executed one time just before a simulation ends. The code is in charge of restoring object's initial configuration, clearing sensor states, collision states, etc.</span></p>
+<p><a href="https://studywolf.wordpress.com/2016/04/18/using-vrep-for-simulation-of-force-controlled-models/">using-vrep-for-simulation-of-force-controlled-models</a></p>
+<p>the hybrid IK mode works as follows:</p>
+<p>Basically Ik will be computed for each leg. We know the desired foot position/orientation, and we compute the leg joint values that satisfy this. This doesn't involve dynamics at all.</p>
+<p>The calculated joint values of the joints in hybrid IK mode will be applied as desired position, where the joints in hybrid IK mode are actually in force/torque position control.</p>
+<p>Flight simulation:</p>
+<p>[https://github.com/simondlevy/hackflight/tree/master/sim]</p>
+<p>Magnet simulation:</p>
+<p><a href="http://www.coppeliarobotics.com/scenesAndModels/simpleMagnetDemo.ttt">http://www.coppeliarobotics.com/scenesAndModels/simpleMagnetDemo.ttt</a> </p><h2>Get started</h2>
 <p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
 <p><b>V-REP is computationally intensive. To minimize power usage, make sure to "pause" or "stop" a simulation when you are not using it.</b></p>
 <p><b>1.</b><span> </span>Go to<span> </span><a class="external free" href="http://www.coppeliarobotics.com/" rel="nofollow">http://www.coppeliarobotics.com/</a><span> </span>and download and install the free V-REP PRO EDU software for your operating system.</p>
@@ -267,8 +322,38 @@
 <li><a class="external text" href="http://www.coppeliarobotics.com/features.html" rel="nofollow">Overview of V-REP Features</a></li>
 <li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/apiOverview.htm" rel="nofollow">V-REP API Documentation</a><span> </span>These are all functions that can either be called directly from a custom C/C++ plugin or through a Lua embedded script.</li>
 <li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm" rel="nofollow">Remote API Documentation</a><span> </span>The Remote API is how V-REP enables scripts and programs written in other languages (MATLAB, Java, Python, etc.) to interact with a V-REP simulation</li>
-</ul><h1>CAX</h1>
-<p><a href="https://en.wikipedia.org/wiki/Computer-aided_technologies">Computer Aided Technology</a></p>
+</ul><h1>Solvespace</h1>
+<h4>TECHNOLOGY: SOLVING CONSTRAINTS</h4>
+<p>The core of any parametric CAD program is its geometric constraint solver. The solver starts with geometric properties of the sketch, like a line length or an angle or a tangency. Based on these properties, it calculates a simple representation of the sketch's lines, points, and curves.</p>
+<p>For a trivial example, we might specify that a point lies 10 mm from the origin, and 5 mm from the x-axis. We also specify that the line from the origin to that point makes a 65° angle with the z-axis. That point turns out to have (x, y, z) = (8.66, 2.67, 4.23), after solving three equations in three unknowns. A real sketch may involve hundreds of unknowns.</p>
+<p>In SolveSpace, constraints are represented as equations in a symbolic algebra system. In general, these equations are solved numerically, by a modified Newton's method. Some special cases are handled, for any equation that can be solved by forward-substitution, and equations that are soluble alone.</p>
+<p>If the sketch is not fully constrained, then the Jacobian is solved in a least squares sense, with each equation written in such a way as to make the quantity being minimized a useful penalty metric. This tends to yield "less surprising" results when dragging points in an underconstrained sketch, compared to approaches that use weak dimensions to keep the sketch always fully constrained.</p>
+<p>A failure to converge almost always results from a real problem with the specified constraints. For example, a sketch that describes a linkage will fail to converge when the real linkage would bind. If multiple solutions exist, then the initial position of the sketch determines which is chosen. The natural result (according to the basin of attraction of the numerical method) is generally a reasonable choice, though some cases are handled specially.</p>
+<p>In general, constraints apply in 3d. A constraint may also apply projected into a workplane. For example, a constraint on the distance between two points may actually apply to the distance between the projections of those two points into the specified plane. Angle, point-coincident, and point-on-curve constraints are similarly available in projected forms.</p>
+<p>The constraint solver used in SolveSpace is available separately as a library.</p>
+<h1>CAX</h1>
+<p><a href="https://en.wikipedia.org/wiki/Computer-aided_technologies">Computer Aided Technology</a></p><h2>Math</h2>
+<h4>Real world application of Fourier Series:</h4>
+<p><a href="http://mathworld.wolfram.com/FourierSeries.html">http://mathworld.wolfram.com/FourierSeries.html</a></p>
+<p>A Fourier series is an expansion of a periodic function f(x) in terms of an infinite sum of sines and cosines. Fourier series make use of the orthogonality relationships of the sine and cosine functions. The computation and study of Fourier series is known as harmonic analysis and is extremely useful as a way to break up an arbitrary periodic function into a set of simple terms that can be plugged in, solved individually, and then recombined to obtain the solution to the original problem or an approximation to it to whatever accuracy is desired or practical.</p>
+<p>In particular, since the superposition principle holds for solutions of a linear homogeneous ordinary differential equation, if such an equation can be solved in the case of a single sinusoid, the solution for an arbitrary function is immediately available by expressing the original function as a Fourier series and then plugging in the solution for each sinusoidal component. In some special cases where the Fourier series can be summed in closed form, this technique can even yield analytic solutions.</p>
+<p>Any set of functions that form a complete orthogonal system have a corresponding generalized Fourier series analogous to the Fourier series. For example, using orthogonality of the roots of a Bessel function of the first kind gives a so-called Fourier-Bessel series.</p>
+<p><a href="http://math.stackexchange.com/questions/579453/real-world-application-of-fourier-series">http://math.stackexchange.com/questions/579453/real-world-application-of-fourier-series</a></p>
+<p><a href="https://www.quora.com/Why-are-Fourier-series-important-Are-there-any-real-life-applications-of-Fourier-series">https://www.quora.com/Why-are-Fourier-series-important-Are-there-any-real-life-applications-of-Fourier-series</a></p>
+<p>It turns out that (almost) any kind of a wave can be written as a sum of sines and cosines. So for example.</p>
+<h4>Areas that Fourier Series are useful:</h4>
+<p>1. Signal Processing. It may be the best application of Fourier analysis.</p>
+<p>2. Approximation Theory. We use Fourier series to write a function as a trigonometric polynomial.</p>
+<p>3. Control Theory. The Fourier series of functions in the differential equation often gives some prediction about the behavior of the solution of differential equation. They are useful to find out the dynamics of the solution.</p>
+<p>4. Partial Differential equation. We use it to solve higher order partial differential equations by the method of separation of variables.</p>
+<h4>Fourier analysis for designing better running shoes:</h4>
+<p>For a very specific example: One of our undergraduate students was taking data generated by a person running on a force plate. Since force exerted on your feet from running is for the most part periodic, she fit the data with a curve using Fourier analysis. The work that followed can be used to help develop better running shoes.</p>
+<h4>Sympy for Fourier Series analysis:</h4>
+<p><a href="http://docs.sympy.org/latest/modules/series/fourier.html">http://docs.sympy.org/latest/modules/series/fourier.html</a></p>
+<h4>Futher studies:</h4>
+<p><a href="http://jsjk.cn.nctu.edu.tw/JSJK/DSAS/DSAS_5_Fourier%20Transform%20and%20Laplace%20Transform.pdf">http://jsjk.cn.nctu.edu.tw/JSJK/DSAS/DSAS_5_Fourier%20Transform%20and%20Laplace%20Transform.pdf</a></p>
+<p><a href="http://electronics.stackexchange.com/questions/86489/relation-and-difference-between-fourier-laplace-and-z-transforms">http://electronics.stackexchange.com/questions/86489/relation-and-difference-between-fourier-laplace-and-z-transforms</a></p>
+<p><a href="http://www.ijser.org/researchpaper/Relation-between-Fourier--Laplace-and-Z-transforms.pdf">http://www.ijser.org/researchpaper/Relation-between-Fourier--Laplace-and-Z-transforms.pdf</a></p>
 <h2>Range Software</h2>
 <p><a href="http://range-software.com">http://range-software.com</a> </p>
 <p><a href="https://github.com/Range-Software/range3">https://github.com/Range-Software/range3</a></p>
