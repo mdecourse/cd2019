@@ -31,7 +31,7 @@
 <p>此外, 透過 ungit 的導入, 讓 git 與 github 在圖形化介面與中文提交訊息的交互應用下, 能夠更加提升學習效果.</p>
 <p>最後, 本學期希望能改寫 <a href="https://github.com/chiamingyen/pygrouf">Pygrouf</a> 成為合用的網際同儕互評暨自評系統.</p>
 <h4>各學員執行任務</h4>
-<p>請根據 <a href="http://mde.tw/wcm2019/content/實習任務二.html">http://mde.tw/wcm2019/content/實習任務二.html</a> 中的說明:</p>
+<p>請根據 <a href="http://mde.tw/wcm2019/content/實習項目二.html">http://mde.tw/wcm2019/content/實習項目二.html</a> 中的說明:</p>
 <ol>
 <li>自行建立一套可攜程式系統, 並將過程製作成 3~5 分鐘的簡報, 各班每十號推選一名代表利用課堂時間進行簡報說明.</li>
 <li>請設法利用 ungit 管理自己的協同產品設計實習課程網頁 (格式自選, 系統自選).</li>
@@ -42,7 +42,7 @@
 </ol>
 <h4>學習成果驗收</h4>
 <ol>
-<li>各學員確實閱讀 <a href="http://mde.tw/wcm2019/content/實習任務二.html">http://mde.tw/wcm2019/content/實習任務二.html</a><span> 中的說明, 並學會自行製作可攜程式系統.</span></li>
+<li>各學員確實閱讀 <a href="http://mde.tw/wcm2019/content/實習項目二.html">http://mde.tw/wcm2019/content/實習項目二.html</a><span> 中的說明, 並學會自行製作可攜程式系統.</span></li>
 <li><span>各學員確實研讀 Git 教材: <a href="https://git-scm.com/book/zh-tw/v2">https://git-scm.com/book/zh-tw/v2</a><span> 內容, 能夠整理出 3~5 分鐘的簡報.</span></span></li>
 <li><span><span>各學員確實執行 <a href="https://lab.github.com/">https://lab.github.com/</a><span>  中的導引內容, 並能夠整理出 3~5 分鐘的簡報.</span></span></span></li>
 </ol><h2>實習任務二</h2>
@@ -52,16 +52,23 @@
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm</a> </p>
 <h4>各學員執行任務</h4>
 <p>各學員完成上述 Tutorial 後, 請將個人心得放入個人的課程網頁中.</p>
-<h2>實習任務三</h2>
+<h4>延伸專案</h4>
+<p>在 Windows 10 環境中, 以 <a href="https://www.msys2.org/">MSYS2</a> 編譯 V-rep (<a href="https://github.com/CoppeliaRobotics/v_rep">https://github.com/CoppeliaRobotics/v_rep</a>).</p>
+<p><a href="https://drive.google.com/file/d/1QIiAhMf9BTvezmG-w4aIa9Oy2FYB7UIu/view?usp=sharing">V-rep 其他版次原始碼.7z</a> (1.8 GB)</p><h2>實習任務三</h2>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm</a> </p>
-<h2>實習任務四</h2>
+<p>機械設計中的 Kinematic and Dynamic Modeling 中有許多建立模型的技巧, 在運用 <a href="http://www.coppeliarobotics.com/">V-rep</a> 進行運動與動態模擬的過程中, 除了利用 <a href="http://solvespace.com">Solvespace</a> 或 <a href="https://www.onshape.com/">OnShape</a> 繪製系統所牽涉的零組件外, 還必須考慮模擬過程的實用性, 意即在機械系統概念設計初步階段, 必須要先掌握各零組件基本的運動與動態特性, 不必將零組件仍無法明確設計的特徵尺寸置入.</p>
+<p>在這個實習任務中, 可以學習如何建立適用於 <a href="http://www.coppeliarobotics.com/">V-rep</a> 的零件模型.</p>
+<h4>延伸任務</h4>
+<p><a href="https://www.freecadweb.org/">https://www.freecadweb.org/</a> 目前已經能夠支援利用 Python3 程式建立模型 (<a href="https://www.freecadweb.org/wiki/Python_3">註 1</a>, <a href="https://forum.freecadweb.org/viewtopic.php?t=30218">2</a>, <a href="https://github.com/FreeCAD/pivy">3</a>), 當建立與機械設計運動及動態模擬過程中, 最佳的零組件提供方案, 是透過各商用 MCAD 套件的 API 環境, 以電腦程式建構零組件, 因為此舉可以將更多與機械設計流程考量的約束條件置入, 以整合性更高的方式進行機械設計.</p>
+<p>不過目前各商用 MCAD 套件的網際 API 程式環境較高, 此處希望以 <a href="http://solvespace.com">Solvespace</a> 中的 Solver (<a href="https://github.com/KmolYuan/python-solvespace">https://github.com/KmolYuan/python-solvespace</a>), 或 <a href="https://www.freecadweb.org/">FreeCAD</a> 作為範例, 嘗試以可攜程式方法結合 <a href="http://www.coppeliarobotics.com/">V-rep</a>, 自行建立所需的網際協同機械設計環境.</p>
+<p></p><h2>實習任務四</h2>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/lineFollowingBubbleRobTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/lineFollowingBubbleRobTutorial.htm</a> </p>
 <h2>實習任務五</h2>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/inverseKinematicsTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/inverseKinematicsTutorial.htm</a> </p>
 <h2>實習任務六</h2>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/externalControllerTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/externalControllerTutorial.htm</a> </p>
 <p><a href="https://github.com/kmolab/pymcadp/tree/gh-pages/data/v-rep/vrep-api-python-demo">https://github.com/kmolab/pymcadp/tree/gh-pages/data/v-rep/vrep-api-python-demo</a> </p>
-<p></p><h1>CMS</h1>
+<p></p><h1>協同設計</h1>
 <p>協同產品設計實習的三項內容管理系統 (Content Management Systems) 包含</p>
 <p><a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> (循序頁面電子書) - 各組網際協同產品設計規劃與使用說明電子書</p>
 <p><a href="https://revealjs.com/#/">Reveal</a> (網際簡報系統) - 每一協同設計階段完成的簡要報告</p>
@@ -73,6 +80,14 @@
 <li>近端網際 Reveal 編輯環境</li>
 <li>更容易使用的 Pelican 靜態網誌轉換系統</li>
 </ol>
+<h4>機械設計內容表達</h4>
+<p>利用 <a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> 進行口語、文字、2D 靜態檔案、3D 與動態影音、數學與實體表達.</p>
+<p>口語表達 - 透過 Reveal.js 簡報協助隨時進行機械設計內容介紹與解說.</p>
+<p>文字表達 - 編寫在內容管理系統中的中英文資料.</p>
+<p>2D 靜態檔案 - images 與 pdf  等靜態檔案.</p>
+<p>3D 與動態影音 - X3D, three.js 或 mp4 等動態資料.</p>
+<p>數學表達 - 在內容管理系統中提供與機械設計相關的數學表示式及數學模型.</p>
+<p>實體表達 - 將上述各階段所說明的機械設計系統零組件檔案, 經由實際加工製作成實體, 後以其他表達方式進行說明與介紹.</p>
 <p></p><h1>Onshape</h1>
 <h4>特性</h4>
 <p>現有免費的整合 CAX 系統, 應力分析, render, CAM?</p>
@@ -358,7 +373,10 @@
 <li><a class="external text" href="http://www.coppeliarobotics.com/features.html" rel="nofollow">Overview of V-REP Features</a></li>
 <li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/apiOverview.htm" rel="nofollow">V-REP API Documentation</a><span> </span>These are all functions that can either be called directly from a custom C/C++ plugin or through a Lua embedded script.</li>
 <li><a class="external text" href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm" rel="nofollow">Remote API Documentation</a><span> </span>The Remote API is how V-REP enables scripts and programs written in other languages (MATLAB, Java, Python, etc.) to interact with a V-REP simulation</li>
-</ul><h1>Solvespace</h1>
+</ul><h1>CAX</h1>
+<p><a href="https://en.wikipedia.org/wiki/Computer-aided_technologies">Computer Aided Technology</a></p><h2>Solvespace</h2>
+<p><a href="https://github.com/solvespace/solvespace">https://github.com/solvespace/solvespace</a> </p>
+<p><a href="https://media.readthedocs.org/pdf/solvespace/latest/solvespace.pdf">https://media.readthedocs.org/pdf/solvespace/latest/solvespace.pdf</a> </p>
 <h4>TECHNOLOGY: SOLVING CONSTRAINTS</h4>
 <p>The core of any parametric CAD program is its geometric constraint solver. The solver starts with geometric properties of the sketch, like a line length or an angle or a tangency. Based on these properties, it calculates a simple representation of the sketch's lines, points, and curves.</p>
 <p>For a trivial example, we might specify that a point lies 10 mm from the origin, and 5 mm from the x-axis. We also specify that the line from the origin to that point makes a 65° angle with the z-axis. That point turns out to have (x, y, z) = (8.66, 2.67, 4.23), after solving three equations in three unknowns. A real sketch may involve hundreds of unknowns.</p>
@@ -367,18 +385,11 @@
 <p>A failure to converge almost always results from a real problem with the specified constraints. For example, a sketch that describes a linkage will fail to converge when the real linkage would bind. If multiple solutions exist, then the initial position of the sketch determines which is chosen. The natural result (according to the basin of attraction of the numerical method) is generally a reasonable choice, though some cases are handled specially.</p>
 <p>In general, constraints apply in 3d. A constraint may also apply projected into a workplane. For example, a constraint on the distance between two points may actually apply to the distance between the projections of those two points into the specified plane. Angle, point-coincident, and point-on-curve constraints are similarly available in projected forms.</p>
 <p>The constraint solver used in SolveSpace is available separately as a library.</p>
-<h1>Pygrouf</h1>
-<p><a href="https://github.com/chiamingyen/pygrouf">https://github.com/chiamingyen/pygrouf</a> </p>
-<p>改寫 Pygrouf 成為合用的網際同儕互評暨自評系統.</p>
-<h4>參考資料</h4>
-<p><a href="https://teaching.berkeley.edu/resources/assessment-and-evaluation/design-assessment/rubrics">https://teaching.berkeley.edu/resources/assessment-and-evaluation/design-assessment/rubrics</a> </p>
-<p><a href="http://www.teach-nology.com/web_tools/rubrics/">http://www.teach-nology.com/web_tools/rubrics/</a> </p>
-<p><a href="/downloads/The Effects of Instructional Rubrics on Learning to Write.pdf">The Effects of Instructional Rubrics on Learning to Write.pdf</a></p>
-<p><a href="https://github.com/ubc/iPeer">https://github.com/ubc/iPeer</a> </p>
-<p><a href="https://github.com/WebPA/WebPA">https://github.com/WebPA/WebPA</a> </p>
-<p><a href="https://github.com/krstnschwpwr/peer_review_system">https://github.com/krstnschwpwr/peer_review_system</a> </p>
-<p><a href="https://github.com/TEAMMATES/teammates">https://github.com/TEAMMATES/teammates</a>  (<a href="https://teammatesv4.appspot.com/">https://teammatesv4.appspot.com/</a> )</p><h1>CAX</h1>
-<p><a href="https://en.wikipedia.org/wiki/Computer-aided_technologies">Computer Aided Technology</a></p><h2>PythonOCC</h2>
+<h4>延伸探討</h4>
+<p>以 <a href="https://www.msys2.org/">MSYS2</a> 在 Windows 10 環境編譯 Solvespace, 還能依據 <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html</a> 中的說明進行嗎?</p>
+<p>另一個值得探挑的題目是, 以 <a href="https://www.msys2.org/">MSYS2</a> 編譯 <a href="https://github.com/tpaviot/oce">OCE</a>, <a href="https://github.com/tpaviot/oce/issues/631">https://github.com/tpaviot/oce/issues/631</a> </p>
+<h2>FreeCAD</h2>
+<p><a href="https://www.freecadweb.org/">https://www.freecadweb.org/</a> </p><h2>PythonOCC</h2>
 <p><a href="https://github.com/tpaviot/pythonocc-core">https://github.com/tpaviot/pythonocc-core</a> </p>
 <p><a href="http://www.pythonocc.org/">http://www.pythonocc.org/</a> </p>
 <p><a href="https://groups.google.com/forum/#!forum/pythonocc">https://groups.google.com/forum/#!forum/pythonocc</a> </p>
@@ -434,3 +445,28 @@
 <h4>Springer Handbook of Robotics </h4>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-319-32552-1">https://link.springer.com/book/10.1007/978-3-319-32552-1</a> </p>
 <p style="padding-left: 30px;"><a href="http://handbookofrobotics.org/view-chapter/videodetails/0">http://handbookofrobotics.org/view-chapter/videodetails/0</a> </p>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>// <![CDATA[
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+// ]]></script>
+<!-- Your embedded video player code -->
+<div class="fb-video" data-href="https://www.facebook.com/TerryGou1018/videos/2209537249263617/" data-show-text="false" data-width="500"></div>
+<p>(source: <a href="https://www.facebook.com/TerryGou1018">TerryGou</a> and <a href="https://developers.facebook.com/docs/plugins/embedded-video-player/">https://developers.facebook.com/docs/plugins/embedded-video-player/</a> )</p>
+<h2>Pygrouf</h2>
+<p><a href="https://github.com/chiamingyen/pygrouf">https://github.com/chiamingyen/pygrouf</a> </p>
+<p>改寫 Pygrouf 成為合用的網際同儕互評暨自評系統.</p>
+<h4>參考資料</h4>
+<p><a href="https://teaching.berkeley.edu/resources/assessment-and-evaluation/design-assessment/rubrics">https://teaching.berkeley.edu/resources/assessment-and-evaluation/design-assessment/rubrics</a> </p>
+<p><a href="http://www.teach-nology.com/web_tools/rubrics/">http://www.teach-nology.com/web_tools/rubrics/</a> </p>
+<p><a href="/downloads/The Effects of Instructional Rubrics on Learning to Write.pdf">The Effects of Instructional Rubrics on Learning to Write.pdf</a></p>
+<p><a href="https://github.com/ubc/iPeer">https://github.com/ubc/iPeer</a> </p>
+<p><a href="https://github.com/WebPA/WebPA">https://github.com/WebPA/WebPA</a> </p>
+<p><a href="https://github.com/krstnschwpwr/peer_review_system">https://github.com/krstnschwpwr/peer_review_system</a> </p>
+<p><a href="https://github.com/TEAMMATES/teammates">https://github.com/TEAMMATES/teammates</a>  (<a href="https://teammatesv4.appspot.com/">https://teammatesv4.appspot.com/</a> )</p>
