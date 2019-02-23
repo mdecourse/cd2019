@@ -62,7 +62,59 @@
 <p>不同 home 的啟動設置</p>
 <p><a href="https://github.com/mottosso/Qt.py">https://github.com/mottosso/Qt.py</a> (439 個 stars) 與 <a href="https://github.com/spyder-ide/qtpy">https://github.com/spyder-ide/qtpy</a> (255 個 stars) 的選擇. </p>
 <p>對話: <a href="https://github.com/spyder-ide/qtpy/issues/69">https://github.com/spyder-ide/qtpy/issues/69</a> </p>
-<h3>第一週分組程式</h3><h2>實習任務二</h2>
+<h3>第一週分組程式</h3>
+<p>"程式"中的"程"表示流程, 而"式"則指採用特定格式, 因此"程式"可以解釋為利用特定格式的語法來表達特定流程.</p>
+<p>至於電腦程式 (或計算機程式), 則特指該流程是利用電腦執行, 而所謂的特定格式則指採用特定的計算機語言, 與本網誌相關的課程, 主要採用 Python, 其次還使用 Javascript, C/C++ 與 Lua 等程式語言.</p>
+<p>學習計算機程式, 特定語言的語法與解題流程互為因果, 因此在過程中, 除了必須了解各程式語言的基本範式及語法外, 還需要針對解題流程中所使用的資料結構與演算法進行取捨, 對於中型以上程式, 還需選擇採用何種資料庫系統.</p>
+<p>希望利用 Python 對各班學員亂數分組, 必須先了解如何讀進 (with 與 open 及 read) 各班的學員檔案, 設法將各學員的學號轉進數列 (包含利用 splitlines() , 然後導入 random, 並且了解 random.shuffle() 的用法.</p>
+<p>接著在編寫學員亂數分組程式時, 則可按照下列流程配置上述各程式元件:</p>
+<ol>
+<li>讀進學員資料, 設法將各學員學號轉入數列</li>
+<li>利用亂數模組中的 shuffle 函式, 隨機弄亂學員學號數列</li>
+<li>利用重複迴圈, 從學員學號數列中一一取出, 準備進行分組</li>
+<li>在迴圈中利用整數相除後取得餘數的規律, 依照每組幾人的規劃進行分組</li>
+<li>在分組過程, 再設法利用數列的 append, 將各組學員學號納為分組數列</li>
+<li>最後將各組數列再放入選課班級數列中備用</li>
+</ol>
+<p>本學期各班配合協同執行課程實習任務, 進行學員亂數分組, 以下為參考程式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+filename = 'cdaw1_student_list.txt'
+# 每組人數
+num_in_one_group = 8
+# 組序由 1 開始
+group = 1
+# 各班分組後所得數列
+c2019 = []
+with open(filename) as f:
+    # 讀進全部檔案, 轉進數列, 並同時將各行的 \n 去除
+    read_data = f.read().splitlines() 
+print("共有 " + str(len(read_data)) + " 位學員")
+# 利用 shuffle 將數列隨機弄亂
+random.shuffle(read_data)
+for i in range(len(read_data)):
+    # 利用整數相除的餘數進行分組
+    if i%num_in_one_group == 0:
+        # 列出分隔符號
+        print("-"*20)
+        print("group " + str(group) +":")
+        # 在分組區隔時重置各組學員數列
+        group_list = []
+        print()
+        # 同時列出與分隔標註對應 i 的數列內容
+        print(read_data[i])
+        group_list.append(read_data[i])
+        group = group + 1
+    else:
+        # 逐一列出同組的其他學員
+        print(read_data[i])
+        group_list.append(read_data[i])
+    c2019.append(group_list)
+# c2019 為該班分組後所得分組數列
+print(c2019)</pre>
+<p>註: 第一週 cda 學員資料: <a href="https://raw.githubusercontent.com/mdecourse/cd2019/gh-pages/data/cda/cdaw1_student_list.txt">cdaw1_student_list.txt</a></p>
+<p>另外, 本學期除學員自評外, 加入各組學員互評機制, 請各組實際根據課程評量表單取回之資料, 以程式進行處理, 並提出此一評量機制可能帶來的問題與因應方案.</p>
+<h4>已知問題</h4>
+<p>利用 mde At nfu At edu At tw G suite 建立自評與互評表單, 目前無法讓 gm At nfu At edu At tw 的用戶登入填表, 第一種解決方法為, 設法配合課程, 在 gm At nfu At edu At tw 網域帳號中重新建立表格, 第二種解決方案則是, 為每一學員建立 mde At nfu At edu At tw 網域下的臨時課程帳號 (課程結束後刪除).</p><h2>實習任務二</h2>
 <h4>學習要點</h4>
 <p>此任務將逐一導入 <a href="http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm">http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm</a> 中的導引內容.</p>
 <p>首先上場的是:</p>
@@ -440,7 +492,45 @@
 <p><a href="http://range-software.com">http://range-software.com</a> </p>
 <p><a href="https://github.com/Range-Software/range3">https://github.com/Range-Software/range3</a></p>
 <p>Windows 64 位元可攜 <a href="https://drive.google.com/file/d/1Nro6AKutboRbFh3uY5cJQP3BVVuZfFGj/view?usp=sharing">range software3.7z</a> 下載</p>
-<p><img alt="" height="470" src="/images/range_software_ex1jpg.jpg" width="800"/></p><h2>FreeFem++</h2>
+<p><img alt="" height="470" src="/images/range_software_ex1jpg.jpg" width="800"/></p>
+<h3>Range Model</h3>
+<p>Model is a virtual geometric representation of three dimensional object.</p>
+<p>Model consist of geometric <a href="https://www.merriam-webster.com/dictionary/entity">Entities</a>.</p>
+<p>Entity is a collection of elements (geometric <a href="https://www.merriam-webster.com/dictionary/simplexes">simplexes</a>) of similar type and are divided into these types:</p>
+<p>Point - collection of 0D elements (node).<br/>Line - collection of 1D elements (segment).<br/>Surface - collection of 2D elements (triangle, <a href="https://www.merriam-webster.com/dictionary/quadrilateral">quadrilateral</a>).<br/>Volume - collection of 3D elements (<a href="https://www.merriam-webster.com/dictionary/tetrahedron">tetrahedron</a>, 四面體,  <a href="https://www.merriam-webster.com/dictionary/hexahedron">hexahedron</a>, 六面體).</p>
+<p>Regardless of whether elements are 0D, 1D, 2D or 3D they all are represented in 3D space.</p>
+<p>For example point (node) has no dimensions. It only has a position, whereas line has one dimension (length).</p>
+<p>Each entity except Volume can have geometric properties assigned to complete 3D representation.</p>
+<p>These are:</p>
+<p>Point - volume in cubic meters.<br/>Line - cross-sectional area in meters square.<br/>Surface - thickness in meters.</p>
+<h3>Range Problem</h3>
+<p>Problem is a general term for one or more physical <a href="https://www.merriam-webster.com/dictionary/phenomenon">phenomena</a> applied on a geometry and is defined by Problem type, Problem specific setup, Boundary conditions, Initial conditions, Environment conditions and Material settings. </p>
+<h3>Range Problem Type</h3>
+<p>Problem type is an unique <a href="https://www.merriam-webster.com/dictionary/identifier">identifier</a> of the physical phenomena to be solved.</p>
+<p>It is possible to combine multiple different problem types (eg. Heat transfer and Stress analysis or In-compressible viscous flow and <a href="https://www.merriam-webster.com/dictionary/contaminant">Contaminant</a> <a href="https://www.merriam-webster.com/dictionary/dispersion">dispersion</a>).</p>
+<p>List of supported problem types:</p>
+<p>Contaminant dispersion (污染物擴散)<br/><a href="https://www.merriam-webster.com/dictionary/electrostatics">Electro-statics</a><br/><a href="https://www.merriam-webster.com/dictionary/magnetostatics">Magneto-statics</a><br/>In-compressible <a href="https://www.merriam-webster.com/dictionary/viscous">viscous</a> flow<br/>Heat transfer in fluids<br/>Heat transfer<br/><a href="https://www.merriam-webster.com/dictionary/Radiative">Radiative</a> heat transfer<br/>Stress analysis<br/>Modal analysis</p>
+<h3>Range Boundary Condition</h3>
+<p>Boundary condition is a condition specified at the boundary, where boundary can be any model entity (Point, Line, Surface, Volume).</p>
+<p>Boundary conditions are:</p>
+<p>Problem specific - Each Problem type defines its own set of boundary conditions.<br/>Explicit - Exact solution is prescribed at the boundary (eg. Temperature for Heat transfer). Bold text in Boundary conditions list.<br/>Implicit - Implies a solution at the boundary (eg. Heat flux for Heat transfer).<br/>If problem is transient (time-dependent) then time dependent values can be assigned to boundary condition.</p>
+<h3>Range Initial Condition</h3>
+<p>Initial condition is a condition specified at the boundary, where boundary can be any model entity (Point, Line, Surface, Volume) and can be seen as a starting point for the solver.</p>
+<p>For Steady-state problems, well chosen Initial condition improve solver convergence.<br/>Initial conditions are Problem specific where each Problem type defines its own set of initial conditions.</p>
+<h3>Range Environment Condition</h3>
+<p><span>Environment condition</span> is a condition which can be specified at any model entity such as Point, Line, Surface or Volume. <span>Environment condition</span> specifies <span>problem</span> specific values for given environment (eg. <span>Environment temperature</span> or <span>Gravitational force</span>.</p>
+<p>If no <span>Initial condition</span> for given model entity is specified then <span>environment condition</span> is used.</p>
+<h3>Range Material</h3>
+<p><span>Material</span> is a collection of material properties relevant for given <span>Problem type</span>. Values of each material property can be temperature dependent.</p>
+<h3>Range Solver</h3>
+<p><span>Solver</span> is a tool that process <span>Problem</span> settings and compute <span>Results</span> on given <span>Model</span>.</p>
+<p>Based on <span>Model</span> size, <span>Problem type</span>, convergence settings and transient setup, time to solve the <span>Problem</span> may vary from seconds up to hours and longer.</p>
+<h3>Range Result</h3>
+<p><span>Results</span> are produced by the <span>Solver</span> and consist of <span>Result variables</span>.</p>
+<p><span>Results variable</span></p>
+<p><span>Results variable</span> is set of values computed by the <span>Solver</span>. <span>Results variable</span> is defined <span>type</span> (e.g. <span>Temperature</span> or <span>Displacement</span> and a vector of values. Based on <span>type</span> <span>Results variable</span> can contain vector of scalar values or vector values.</p>
+<p>For example <span>Temperature</span> results variable will contain vector of temperatures for each node whereas <span>Displacement</span> will contain vector of displacement vectors for each node.</p>
+<p><span>Results variable</span> can be computed either on node or on element level. For example <span>Displacement</span> is computed on node level, whereas <span>Stress</span> is computed on element level. Each element level variable once computed can be converted to node level. Converting element level variable to node level is one time operation and can not be reverted. To do so results have to be recalculated by the <span>Solver</span>.</p><h2>FreeFem++</h2>
 <p><a href="https://freefem.org/">https://freefem.org/</a> </p>
 <p><a href="https://github.com/FreeFem/FreeFem-sources">https://github.com/FreeFem/FreeFem-sources</a> </p>
 <p><a href="https://github.com/FreeFem/FreeFem-doc-pdf">https://github.com/FreeFem/FreeFem-doc-pdf</a> </p>
