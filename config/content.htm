@@ -78,9 +78,9 @@
 </ol>
 <p>本學期各班配合協同執行課程實習任務, 進行學員亂數分組, 以下為參考程式:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
-filename = 'cdaw1_student_list.txt'
+filename = 'cdbw3_student_list.txt'
 # 每組人數
-num_in_one_group = 8
+num_in_one_group = 11
 # 組序由 1 開始
 group = 1
 # 各班分組後所得數列
@@ -108,13 +108,20 @@ for i in range(len(read_data)):
         # 逐一列出同組的其他學員
         print(read_data[i])
         group_list.append(read_data[i])
-    c2019.append(group_list)
+    if i%num_in_one_group == 0:
+        c2019.append(group_list)
 # c2019 為該班分組後所得分組數列
 print(c2019)</pre>
-<p>註: 第一週 cda 學員資料: <a href="https://raw.githubusercontent.com/mdecourse/cd2019/gh-pages/data/cda/cdaw1_student_list.txt">cdaw1_student_list.txt</a></p>
+<p>註: 第一週 cda 學員資料: <a href="https://raw.githubusercontent.com/mdecourse/cd2019/gh-pages/data/cda/cdaw1_student_list.txt">cdaw1_student_list.txt</a>, 其他相關資料在倉儲 data 目錄下.</p>
 <p>另外, 本學期除學員自評外, 加入各組學員互評機制, 請各組實際根據課程評量表單取回之資料, 以程式進行處理, 並提出此一評量機制可能帶來的問題與因應方案.</p>
 <h4>已知問題</h4>
-<p>利用 mde At nfu At edu At tw G suite 建立自評與互評表單, 目前無法讓 gm At nfu At edu At tw 的用戶登入填表, 第一種解決方法為, 設法配合課程, 在 gm At nfu At edu At tw 網域帳號中重新建立表格, 第二種解決方案則是, 為每一學員建立 mde At nfu At edu At tw 網域下的臨時課程帳號 (課程結束後刪除).</p><h2>實習任務二</h2>
+<p>利用 mde At nfu At edu At tw G suite 建立自評與互評表單, 目前無法讓 gm At nfu At edu At tw 的用戶登入填表, 第一種解決方法為, 設法配合課程, 在 gm At nfu At edu At tw 網域帳號中重新建立表格, 第二種解決方案則是, 為每一學員建立 mde At nfu At edu At tw 網域下的臨時課程帳號 (課程結束後刪除).</p>
+<h3>w1取分項目</h3>
+<p>本學期針對各實習任務, 加入取分項目, 各組可以將此項目分配給組員, 完成後可以在自評或互評中做為取分任務.</p>
+<p>W1 任務一項目一: 在利用亂數分組, 能否根據已經完成的主程式, 編寫一個網際程式或單機 PyQt5 程式, 讀進相關資料檔案後, 在瀏覽器或 PYQt5 程式中顯示出結果.</p>
+<p><span>W1 任務一項目二:  由於一開始亂數分組程式中的 bug, 導致 2a 在分組時, 只得到<a href="https://github.com/mdecourse/cd2019/blob/gh-pages/data/cda/cda_w2_result.txt">分組結果</a>, 並無分組數列, 能否編寫一個程式讀進此一分組結果, 然後列出與 <a href="https://github.com/mdecourse/cd2019/blob/gh-pages/data/cdb/cdbw3_grouping_list.txt">2b 分組結果數列</a>相同格式的資料.</span></p>
+<p>W1任務一項目三: 根據 <a href="https://2019wcm.blogspot.com/search/label/ungit">https://2019wcm.blogspot.com/search/label/ungit</a> 為 ungit 寫一個使用手冊.</p>
+<p></p><h2>實習任務二</h2>
 <h4>學習要點</h4>
 <p>此任務將逐一導入 <a href="http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm">http://www.coppeliarobotics.com/helpFiles/en/tutorials.htm</a> 中的導引內容.</p>
 <p>首先上場的是:</p>
