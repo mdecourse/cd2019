@@ -167,6 +167,7 @@ print(c2019)</pre>
 <li>如何利用程式 (<a href="http://www.coppeliarobotics.com/helpFiles/en/luaCrashCourse.htm">Lua</a> 或 <a href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python</a>) 控制<span>操縱桿的平移軸與旋轉軸</span></li>
 <li><span>如何<a href="http://www.coppeliarobotics.com/helpFiles/en/proximitySensors.htm">感測</a>足球通過球門?</span></li>
 <li>如何利用 <a href="http://www.coppeliarobotics.com/helpFiles/en/customUIPlugin.htm">Qt 表單</a>紀錄雙方得分?</li>
+<li>人偶擊球受力時的應用分析, 可採用 <a href="/get_page/%E5%AF%A6%E7%BF%92%E4%BB%BB%E5%8B%99%E4%BA%8C/get_page/Range%20Software">Range3</a> 進行分析.</li>
 </ol>
 <p><img alt="" height="600" src="/images/Foosball_table.jpg" width="800"/></p>
 <p><img alt="" height="430" src="/images/official-foosball-table-dimensions.jpg" width="550"/></p>
@@ -596,7 +597,7 @@ print(c2019)</pre>
 <p><span>Results variable</span></p>
 <p><span>Results variable</span> is set of values computed by the <span>Solver</span>. <span>Results variable</span> is defined <span>type</span> (e.g. <span>Temperature</span> or <span>Displacement</span> and a vector of values. Based on <span>type</span> <span>Results variable</span> can contain vector of scalar values or vector values.</p>
 <p>For example <span>Temperature</span> results variable will contain vector of temperatures for each node whereas <span>Displacement</span> will contain vector of displacement vectors for each node.</p>
-<p><span>Results variable</span> can be computed either on node or on element level. For example <span>Displacement</span> is computed on node level, whereas <span>Stress</span> is computed on element level. Each element level variable once computed can be converted to node level. Converting element level variable to node level is one time operation and can not be reverted. To do so results have to be recalculated by the <span>Solver</span>.</p><h2>FreeFem++</h2>
+<p><span>Results variable</span> can be computed either on node or on element level. For example <span>Displacement</span> is computed on node level, whereas <span>Stress</span> is computed on element level. Each element level variable once computed can be converted to node level. Converting element level variable to node level is one time operation and can not be reverted. To do so results have to be recalculated by the <span>Solver</span>.</p><h2>FreeFem</h2>
 <p><a href="https://freefem.org/">https://freefem.org/</a> </p>
 <p><a href="https://github.com/FreeFem/FreeFem-sources">https://github.com/FreeFem/FreeFem-sources</a> </p>
 <p><a href="https://github.com/FreeFem/FreeFem-doc-pdf">https://github.com/FreeFem/FreeFem-doc-pdf</a> </p>
