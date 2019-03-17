@@ -116,7 +116,32 @@ print(c2019)</pre>
 <p>另外, 本學期除學員自評外, 加入各組學員互評機制, 請各組實際根據課程評量表單取回之資料, 以程式進行處理, 並提出此一評量機制可能帶來的問題與因應方案.</p>
 <h4>已知問題</h4>
 <p>利用 mde At nfu At edu At tw G suite 建立自評與互評表單, 目前無法讓 gm At nfu At edu At tw 的用戶登入填表, 第一種解決方法為, 設法配合課程, 在 gm At nfu At edu At tw 網域帳號中重新建立表格, 第二種解決方案則是, 為每一學員建立 mde At nfu At edu At tw 網域下的臨時課程帳號 (課程結束後刪除).</p>
-<h3>w1取分項目</h3>
+<h3>Git Book 摘要</h3>
+<p><a href="https://git-scm.com/book/zh-tw/v2">https://git-scm.com/book/zh-tw/v2</a> </p>
+<h4>開始</h4>
+<p>使用 Git 的原因為: 希望利用分散式版次管理系統執行產品開發, 不重複存檔, 不讓各版次內容產生混淆, 且透過 Github, 可以多人協同, 並透過網際內容管理, 完整呈現開發歷程資料.</p>
+<p>在 64 位元 Windows 10 環境中, 採用可攜版本, 無需安裝: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a> </p>
+<p>Git 基本設定, 利用</p>
+<p>git config --global user.name ""使用者"</p>
+<p>git config --global user.email "電子郵箱"</p>
+<p>git config --global http.proxy http://&lt;username&gt;:&lt;password&gt;@&lt;proxy-server-url&gt;:&lt;port&gt;</p>
+<p>上述設定會儲存至可攜系統的 y:\home\.gitconfig 設定檔案中, 若在不同環境中有不同設定, 可以利用 start.bat 啟動系統時, 將 home 指定到所需的目錄中即可.</p>
+<h4>Git 基礎</h4>
+<p>取得 Git 倉儲的方法, 一方面在近端以 git init 建立新倉儲, 或從遠端 Git 伺服器, 以 git clone 取下某一倉儲檔案.</p>
+<p>之後, 新增倉儲或 clone 之倉儲, 都可以利用 git add 對倉儲新增檔案內容, 或以編輯器修改既有的檔案. 倉儲內容改版後, 可以利用 git commit -m "提交說明" 在近端對倉儲提交, 聰遠端 clone 之倉儲, 可直接利用 git push 將倉儲改版內容推送到遠端. 而在近端新增之倉儲, 則必須先利用 git remote add 加入近端倉儲與特定遠端倉儲對應之設定後, 才能以 git push 將改版內容, 推送到遠端.</p>
+<p>倘若在可攜系統中導入 ungit, 可以在近端利用圖形化介面, 檢視各倉儲的改版資料, 可以免除在近端使用 git status, git log, git checkout, git diff, git tag, git show 或 git reset 的指令.</p>
+<h4>使用 Git 分支</h4>
+<p>參考: <a href="https://git-scm.com/book/zh-tw/v2/%E4%BD%BF%E7%94%A8-Git-%E5%88%86%E6%94%AF-%E7%B0%A1%E8%BF%B0%E5%88%86%E6%94%AF">簡述分支</a> </p>
+<p>使用分支的目的, 是希望從開發主線上分離開來, 然後在不影響主線的情況下繼續工作. 一旦在分支的改版內容獲得認可, 協同者便可利用 git merge, 將分支的版本納入開發主分支,  或者合併至其他分支中.</p><h3>Github 自學</h3>
+<p><a href="https://lab.github.com/">https://lab.github.com/</a> </p>
+<p>Github 利用其 Issues 與 API 的程式編寫, 以網際自學架構讓使用者可以互動式流程, 學習與 Github 所提供功能有關的自學教材, 其中包括:</p>
+<p>Github 簡介: <a href="https://lab.github.com/githubtraining/introduction-to-github">https://lab.github.com/githubtraining/introduction-to-github</a> </p>
+<p>Html 簡介: <a href="https://lab.github.com/githubtraining/introduction-to-html">https://lab.github.com/githubtraining/introduction-to-html</a> </p>
+<p>利用 Markdown 進行溝通: <a href="https://lab.github.com/githubtraining/communicating-using-markdown">https://lab.github.com/githubtraining/communicating-using-markdown</a> </p>
+<p>Github Pages: <a href="https://lab.github.com/githubtraining/github-pages">https://lab.github.com/githubtraining/github-pages</a> </p>
+<p>處理合併與衝突: <a href="https://lab.github.com/githubtraining/managing-merge-conflicts">https://lab.github.com/githubtraining/managing-merge-conflicts</a> </p>
+<p>審核拉回請求: <a href="https://lab.github.com/githubtraining/reviewing-pull-requests">https://lab.github.com/githubtraining/reviewing-pull-requests</a> </p>
+<p>利用 Travis CI 進行整合: <a href="https://lab.github.com/githubtraining/continuous-integration-with-travis-ci">https://lab.github.com/githubtraining/continuous-integration-with-travis-ci</a> </p><h3>w1取分項目</h3>
 <p>本學期針對各實習任務, 加入取分項目, 各組可以將此項目分配給組員, 完成後可以在自評或互評中做為取分任務.</p>
 <p>W1 任務一項目一: 在利用亂數分組, 能否根據已經完成的主程式, 編寫一個網際程式或單機 PyQt5 程式, 讀進相關資料檔案後, 在瀏覽器或 PYQt5 程式中顯示出結果.</p>
 <p><span>W1 任務一項目二:  由於一開始亂數分組程式中的 bug, 導致 2a 在分組時, 只得到<a href="https://github.com/mdecourse/cd2019/blob/gh-pages/data/cda/cda_w2_result.txt">分組結果</a>, 並無分組數列, 能否編寫一個程式讀進此一分組結果, 然後列出與 <a href="https://github.com/mdecourse/cd2019/blob/gh-pages/data/cdb/cdbw3_grouping_list.txt">2b 分組結果數列</a>相同格式的資料.</span></p>
@@ -130,6 +155,19 @@ print(c2019)</pre>
 <p>各學員完成上述 Tutorial 後, 請將個人心得放入個人的課程網頁中.</p>
 <h4>分組專題</h4>
 <p>請各組利用 <a href="https://www.onshape.com/">OnShape</a> 或其他 MCAD (Mechanical Computer Aided Design) 套件, 以協同模式建立手足球系統, 並將零組件輸入 <a href="http://www.coppeliarobotics.com/">V-rep</a>, 以建立可以兩兩競賽用的動態系統.</p>
+<p>技術需求:</p>
+<ol>
+<li>建立系統所需的 3D 零組件 (利用<a href="https://www.onshape.com/"> Onshape</a> 或其他 MCAD 套件完成)</li>
+<li>將零組件轉入<a href="http://www.coppeliarobotics.com/"> V-rep</a> (轉入後是否需要簡化,? 如何簡化? 如何設定模擬參數?)</li>
+<li>分辨運動 (<a href="https://en.wikipedia.org/wiki/Kinematics">Kinematics</a>) 模擬與動力 (<a href="https://en.wikipedia.org/wiki/Dynamics_(mechanics)">Dynamics</a>) 模擬的差異.</li>
+<li>如何設定各操縱桿的平移軸 (Prismatic <a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Joint</a>) 運動?</li>
+<li>如何設定各<span>操縱桿的旋轉軸 (Revolute <a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Joint</a>) 運動?</span></li>
+<li><span>如何設定各人偶與足球之間的碰撞<a href="http://www.coppeliarobotics.com/helpFiles/en/shapeDynamicsProperties.htm">動力</a><a href="http://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm">擊球模擬</a><a href="http://www.coppeliarobotics.com/helpFiles/en/shapeDynamicsProperties.htm"></a>?</span></li>
+<li>如何利用鍵盤中的字母鍵控制操縱桿的平移軸與旋轉軸</li>
+<li>如何利用程式 (<a href="http://www.coppeliarobotics.com/helpFiles/en/luaCrashCourse.htm">Lua</a> 或 <a href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python</a>) 控制<span>操縱桿的平移軸與旋轉軸</span></li>
+<li><span>如何<a href="http://www.coppeliarobotics.com/helpFiles/en/proximitySensors.htm">感測</a>足球通過球門?</span></li>
+<li>如何利用 <a href="http://www.coppeliarobotics.com/helpFiles/en/customUIPlugin.htm">Qt 表單</a>紀錄雙方得分?</li>
+</ol>
 <p><img alt="" height="600" src="/images/Foosball_table.jpg" width="800"/></p>
 <p><img alt="" height="430" src="/images/official-foosball-table-dimensions.jpg" width="550"/></p>
 <p>足球員尺寸:</p>
@@ -558,7 +596,7 @@ print(c2019)</pre>
 <p><span>Results variable</span></p>
 <p><span>Results variable</span> is set of values computed by the <span>Solver</span>. <span>Results variable</span> is defined <span>type</span> (e.g. <span>Temperature</span> or <span>Displacement</span> and a vector of values. Based on <span>type</span> <span>Results variable</span> can contain vector of scalar values or vector values.</p>
 <p>For example <span>Temperature</span> results variable will contain vector of temperatures for each node whereas <span>Displacement</span> will contain vector of displacement vectors for each node.</p>
-<p><span>Results variable</span> can be computed either on node or on element level. For example <span>Displacement</span> is computed on node level, whereas <span>Stress</span> is computed on element level. Each element level variable once computed can be converted to node level. Converting element level variable to node level is one time operation and can not be reverted. To do so results have to be recalculated by the <span>Solver</span>.</p><h2>FreeFem++</h2>
+<p><span>Results variable</span> can be computed either on node or on element level. For example <span>Displacement</span> is computed on node level, whereas <span>Stress</span> is computed on element level. Each element level variable once computed can be converted to node level. Converting element level variable to node level is one time operation and can not be reverted. To do so results have to be recalculated by the <span>Solver</span>.</p><h2>FreeFem</h2>
 <p><a href="https://freefem.org/">https://freefem.org/</a> </p>
 <p><a href="https://github.com/FreeFem/FreeFem-sources">https://github.com/FreeFem/FreeFem-sources</a> </p>
 <p><a href="https://github.com/FreeFem/FreeFem-doc-pdf">https://github.com/FreeFem/FreeFem-doc-pdf</a> </p>
