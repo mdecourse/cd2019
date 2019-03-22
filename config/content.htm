@@ -196,7 +196,156 @@ print(c2019)</pre>
 <h4>Building Clean Model</h4>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm</a> </p>
 <h4>Designing Dynamic Simulation</h4>
-<p><a href="http://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm#staticAndRespondable">http://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm#staticAndRespondable</a> </p><h2>實習任務三</h2>
+<p><a href="http://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm#staticAndRespondable">http://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm#staticAndRespondable</a> </p>
+<h4>ResizeableFloor</h4>
+<p>網際 Lua 程式執行環境: <a href="http://mde.tw/vecp2018/lua/SchoolProject/">http://mde.tw/vecp2018/lua/SchoolProject/</a> </p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    model=sim.getObjectAssociatedWithScript(sim.handle_self)
+    e1=sim.getObjectHandle('ResizableFloor_5_25_element')
+    e2=sim.getObjectHandle('ResizableFloor_5_25_visibleElement')
+end
+
+function sysCall_cleanup()
+    hideDlg()
+end
+
+function sysCall_nonSimulation()
+    local s=sim.getObjectSelection()
+    if s and #s&gt;=1 and s[1]==model then
+        showDlg()
+    else
+        hideDlg()
+    end
+end
+
+function sysCall_beforeSimulation()
+    hideDlg()
+end
+
+function sysCall_beforeSimulation()
+    hideDlg()
+end
+
+function updateFloor()
+    local c=readInfo()
+    local sx=c['sizes'][1]/5
+    local sy=c['sizes'][2]/5
+    local sizeFact=sim.getObjectSizeFactor(model)
+    sim.setObjectParent(e1,-1,true)
+    local child=sim.getObjectChild(model,0)
+    while child~=-1 do
+        sim.removeObject(child)
+        child=sim.getObjectChild(model,0)
+    end
+    local xPosInit=(sx-1)*-2.5*sizeFact
+    local yPosInit=(sy-1)*-2.5*sizeFact
+    local f1,f2
+    for x=1,sx,1 do
+        for y=1,sy,1 do
+            if (x==1)and(y==1) then
+                sim.setObjectParent(e1,model,true)
+                f1=e1
+            else
+                f1=sim.copyPasteObjects({e1},0)[1]
+                f2=sim.copyPasteObjects({e2},0)[1]
+                sim.setObjectParent(f1,model,true)
+                sim.setObjectParent(f2,f1,true)
+            end
+            local p=sim.getObjectPosition(f1,sim.handle_parent)
+            p[1]=xPosInit+(x-1)*5*sizeFact
+            p[2]=yPosInit+(y-1)*5*sizeFact
+            sim.setObjectPosition(f1,sim.handle_parent,p)
+        end
+    end
+end
+
+function getDefaultInfoForNonExistingFields(info)
+    if not info['version'] then
+        info['version']=0
+    end
+    if not info['sizes'] then
+        info['sizes']={1,1}
+    end
+end
+
+function readInfo()
+    local data=sim.readCustomDataBlock(model,'XYZ_FLOOR_INFO')
+    if data then
+        data=sim.unpackTable(data)
+    else
+        data={}
+    end
+    getDefaultInfoForNonExistingFields(data)
+    return data
+end
+
+function writeInfo(data)
+    if data then
+        sim.writeCustomDataBlock(model,'XYZ_FLOOR_INFO',sim.packTable(data))
+    else
+        sim.writeCustomDataBlock(model,'XYZ_FLOOR_INFO','')
+    end
+end
+
+function updateUi()
+    local c=readInfo()
+    local sizeFact=sim.getObjectSizeFactor(model)
+    simUI.setLabelText(ui,1,'X-size (m): '..string.format("%.2f",c['sizes'][1]*sizeFact),true)
+    simUI.setSliderValue(ui,2,c['sizes'][1]/5,true)
+    simUI.setLabelText(ui,3,'Y-size (m): '..string.format("%.2f",c['sizes'][2]*sizeFact),true)
+    simUI.setSliderValue(ui,4,c['sizes'][2]/5,true)
+end
+
+function sliderXChange(ui,id,newVal)
+    local c=readInfo()
+    c['sizes'][1]=newVal*5
+    writeInfo(c)
+    updateUi()
+    updateFloor()
+end
+
+function sliderYChange(ui,id,newVal)
+    local c=readInfo()
+    c['sizes'][2]=newVal*5
+    writeInfo(c)
+    updateUi()
+    updateFloor()
+end
+
+function closeEventHandler(h)
+    sim.removeScript(sim.handle_self)
+end
+
+function showDlg()
+    if not ui then
+    xml = [[
+&lt;ui title="Floor Customizer" closeable="true" on-close="closeEventHandler" resizable="false" activate="false"&gt;
+    &lt;group layout="form" flat="true"&gt;
+        &lt;label text="X-size (m): 1" id="1"/&gt;
+        &lt;hslider tick-position="above" tick-interval="1" minimum="1" maximum="5" on-change="sliderXChange" id="2"/&gt;
+        &lt;label text="Y-size (m): 1" id="3"/&gt;
+        &lt;hslider tick-position="above" tick-interval="1" minimum="1" maximum="5" on-change="sliderYChange" id="4"/&gt;
+    &lt;/group&gt;
+    &lt;label text="" style="* {margin-left: 400px;}"/&gt;
+&lt;/ui&gt;
+]]
+        ui=simUI.create(xml)
+        if 2==sim.getInt32Parameter(sim.intparam_platform) then
+            -- To fix a Qt bug on Linux
+            sim.auxFunc('activateMainWindow')
+        end
+        updateUi()
+    end
+end
+
+function hideDlg()
+    if ui then
+        simUI.destroy(ui)
+        ui=nil
+    end
+end
+</pre>
+<p></p><h2>實習任務三</h2>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm</a> </p>
 <p>機械設計中的 Kinematic and Dynamic Modeling 中有許多建立模型的技巧, 在運用 <a href="http://www.coppeliarobotics.com/">V-rep</a> 進行運動與動態模擬的過程中, 除了利用 <a href="http://solvespace.com">Solvespace</a> 或 <a href="https://www.onshape.com/">OnShape</a> 繪製系統所牽涉的零組件外, 還必須考慮模擬過程的實用性, 意即在機械系統概念設計初步階段, 必須要先掌握各零組件基本的運動與動態特性, 不必將零組件仍無法明確設計的特徵尺寸置入.</p>
 <p>在這個實習任務中, 可以學習如何建立適用於 <a href="http://www.coppeliarobotics.com/">V-rep</a> 的零件模型.</p>
