@@ -85,6 +85,61 @@ $(document).ready(doSearch);
 </confmenu></header>
 <div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='Introduction.html'>Introduction</a><li><a href='實習任務.html'>實習任務</a><ul><li><a href='實習任務一.html'>實習任務一</a><ul><li><a href='建立可攜程式系統.html'>建立可攜程式系統</a><li><a href='第一週分組程式.html'>第一週分組程式</a><li><a href='Git Book 摘要.html'>Git Book 摘要</a><li><a href='Github 自學.html'>Github 自學</a><li><a href='w1取分項目.html'>w1取分項目</a></li></ul><li><a href='實習任務二.html'>實習任務二</a><ul><li><a href='BubbleRob.html'>BubbleRob</a></li></ul><li><a href='實習任務三.html'>實習任務三</a><li><a href='實習任務四.html'>實習任務四</a><li><a href='實習任務五.html'>實習任務五</a><li><a href='實習任務六.html'>實習任務六</a></li></ul><li><a href='協同設計.html'>協同設計</a><li><a href='Onshape.html'>Onshape</a><ul><li><a href='BOMs.html'>BOMs</a></li></ul><li><a href='V-rep.html'>V-rep</a><ul><li><a href='V-rep Tutorial.html'>V-rep Tutorial</a><li><a href='Get started.html'>Get started</a><li><a href='V-rep Introduction.html'>V-rep Introduction</a></li></ul><li><a href='CAX.html'>CAX</a><ul><li><a href='Solvespace.html'>Solvespace</a><li><a href='FreeCAD.html'>FreeCAD</a><li><a href='PythonOCC.html'>PythonOCC</a><li><a href='Math.html'>Math</a><li><a href='Range Software.html'>Range Software</a><ul><li><a href='Range Model.html'>Range Model</a><li><a href='Range Problem.html'>Range Problem</a><li><a href='Range Problem Type.html'>Range Problem Type</a><li><a href='Range Boundary Condition.html'>Range Boundary Condition</a><li><a href='Range Initial Condition.html'>Range Initial Condition</a><li><a href='Range Environment Condition.html'>Range Environment Condition</a><li><a href='Range Material.html'>Range Material</a><li><a href='Range Solver.html'>Range Solver</a><li><a href='Range Result.html'>Range Result</a></li></ul><li><a href='FreeFem.html'>FreeFem</a><li><a href='FEniCS.html'>FEniCS</a></li></ul><li><a href='參考資料.html'>參考資料</a><ul><li><a href='Pygrouf.html'>Pygrouf</a><li><a href='AI.html'>AI</a></li></ul></nav><section><div id="tipue_search_content">實習任務二 << <a href='實習任務二.html'>Previous</a> <a href='實習任務三.html'>Next</a> >> 實習任務三<br /><h1>BubbleRob</h1>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm</a> </p>
+<p>操作步驟參考: <a href="http://fid.cl/courses/ai-robotics/vrep-tut/tutorial_VREP_bob.pdf">http://fid.cl/courses/ai-robotics/vrep-tut/tutorial_VREP_bob.pdf</a>  (<a href="./../downloads/tutorial_VREP_bob.pdf">tutorial_VREP_bob.pdf</a>)</p>
+<h4>建立 Model</h4>
+<p><span>We now need to finish </span><strong>BubbleRob</strong><span><span> </span>as a<span> </span></span><a href="http://www.coppeliarobotics.com/helpFiles/en/models.htm">model</a><span><span> </span>definition. We select the model base (i.e. object<span> </span></span><em>bubbleRob</em><span>) then check items<span> </span></span><strong>Object is model base</strong><span><span> </span>and<span> </span></span><strong>Object/model can transfer or accept DNA</strong><span><span> </span>in the<span> </span></span><a href="http://www.coppeliarobotics.com/helpFiles/en/commonPropertiesDialog.htm">object common properties</a><span>: there is now a stippled bounding box that encompasses all objects in the model hierarchy. </span></p>
+<p><span>We select the two joints, the proximity sensor and the graph, then enable item<span> <strong>Ignored by model bounding box</strong></span></span><span><span> </span>and click<span> </span></span><strong>Apply to selection</strong><span>, in the same dialog: the model bounding box now ignores the two joints and the proximity sensor. Still in the same dialog, we disable<span> </span></span><strong>camera visibility layer</strong><span><span> </span>2, and enable<span> </span></span><strong>camera visibility layer</strong><span><span> </span>10 for the two joints and the force sensor: this effectively hides the two joints and the force sensor, since layers 9-16 are disabled by default. </span></p>
+<p><span>At any time we can<span> </span></span><a href="http://www.coppeliarobotics.com/helpFiles/en/layerSelectionDialog.htm">modify the visibility layers for the whole scene</a><span>. To finish the model definition, we select the vision sensor, the two wheels, the slider, and the graph, then enable item<span> </span></span><strong>Select base of model instead</strong><span>: if we now try to select an object in our model in the scene, the whole model will be selected instead, which is a convenient way to handle and manipulate the whole model as a single object.</span></p>
+<p><span> Additionally, this protects the model against inadvertant modification. Individual objects in the model can still be selected in the scene by click-selecting them with control-shift, or normally selecting them in the scene hierarchy. We finally collapse the model tree in the scene hierarchy. This is what we have:</span></p>
+<h4><span>新增 Vision Sensor</span></h4>
+<p><span>Next we will add a vision sensor, at the same position and orientation as BubbleRob's proximity sensor. We open the model hierarchy again, then click [Menu bar --&gt; Add --&gt; Vision sensor --&gt; Perspective type], then attach the vision sensor to the proximity sensor, and set the local position and orientation of the vision sensor to (0,0,0). </span></p>
+<p><span>We also make sure the vision sensor is not not visible, not part of the model bounding box, and that if clicked, the model will be selected instead. In order to customize the vision sensor, we open its properties dialog. We set the Far clipping plane item to 1, and the Resolution x and Resolution y items to 256 and 256. </span></p>
+<p><span>We then open the vision sensor filter dialog by clicking Show filter dialog. We select the filter component Edge detection on work image and click Add filter. We position the newly added filter in second position (one position up, using the up button). We double-click the newly added filter component and adjust its Threshold item to 0.2, then click OK. We add a floating view to the scene, and over the newly added floating view, right-click [Popup menu --&gt; View --&gt; Associate view with selected vision sensor] (we make sure the vision sensor is selected during that process). </span></p>
+<p><span>To be able to see the vision sensor's image, we start the simulation, then stop it again.<br/>The last thing that we need for our scene is a small child script that will control BubbleRob's behavior. We select bubbleRob and click [Menu bar --&gt; Add --&gt; Associated child script --&gt; Non threaded]. This just added a non-threaded child script to the scene, and associated it with bubbleRob. </span></p>
+<p><span>We can also add, remove or modify scripts via the script dialog which can be opened with [Menu bar --&gt; Tools --&gt; Scripts] or through the appropriate toolbar button:</span></p>
+<h4><span>Lua 控制程式</span></h4>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function speedChange_callback(ui,id,newVal)
+    speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100
+end
+
+function sysCall_init()
+    -- This is executed exactly once, the first time this script is executed
+    bubbleRobBase=sim.getObjectAssociatedWithScript(sim.handle_self) -- this is bubbleRob's handle
+    leftMotor=sim.getObjectHandle("bubbleRob_leftMotor") -- Handle of the left motor
+    rightMotor=sim.getObjectHandle("bubbleRob_rightMotor") -- Handle of the right motor
+    noseSensor=sim.getObjectHandle("bubbleRob_sensingNose") -- Handle of the proximity sensor
+    minMaxSpeed={50*math.pi/180,300*math.pi/180} -- Min and max speeds for each motor
+    backUntilTime=-1 -- Tells whether bubbleRob is in forward or backward mode
+    -- Create the custom UI:
+        xml = '&lt;ui title="'..sim.getObjectName(bubbleRobBase)..' speed" closeable="false" resizeable="false" activate="false"&gt;'..[[
+        &lt;hslider minimum="0" maximum="100" onchange="speedChange_callback" id="1"/&gt;
+        &lt;label text="" style="* {margin-left: 300px;}"/&gt;
+        &lt;/ui&gt;
+        ]]
+    ui=simUI.create(xml)
+    speed=(minMaxSpeed[1]+minMaxSpeed[2])*0.5
+    simUI.setSliderValue(ui,1,100*(speed-minMaxSpeed[1])/(minMaxSpeed[2]-minMaxSpeed[1]))
+end
+
+function sysCall_actuation()
+    result=sim.readProximitySensor(noseSensor) -- Read the proximity sensor
+    -- If we detected something, we set the backward mode:
+    if (result&gt;0) then backUntilTime=sim.getSimulationTime()+4 end 
+
+    if (backUntilTime&lt;sim.getSimulationTime()) then
+        -- When in forward mode, we simply move forward at the desired speed
+        sim.setJointTargetVelocity(leftMotor,speed)
+        sim.setJointTargetVelocity(rightMotor,speed)
+    else
+        -- When in backward mode, we simply backup in a curve at reduced speed
+        sim.setJointTargetVelocity(leftMotor,-speed/2)
+        sim.setJointTargetVelocity(rightMotor,-speed/8)
+    end
+end
+
+function sysCall_cleanup()
+	simUI.destroy(ui)
+end</pre>
 <h4>Building Clean Model</h4>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm</a> </p>
 <h4>Designing Dynamic Simulation</h4>
