@@ -86,8 +86,16 @@ $(document).ready(doSearch);
 <div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='Introduction.html'>Introduction</a><li><a href='實習任務.html'>實習任務</a><ul><li><a href='實習任務一.html'>實習任務一</a><ul><li><a href='建立可攜程式系統.html'>建立可攜程式系統</a><li><a href='第一週分組程式.html'>第一週分組程式</a><li><a href='Git Book 摘要.html'>Git Book 摘要</a><li><a href='Github 自學.html'>Github 自學</a><li><a href='w1取分項目.html'>w1取分項目</a></li></ul><li><a href='實習任務二.html'>實習任務二</a><ul><li><a href='V-rep Introduction.html'>V-rep Introduction</a><li><a href='BubbleRob.html'>BubbleRob</a></li></ul><li><a href='實習任務三.html'>實習任務三</a><li><a href='實習任務四.html'>實習任務四</a><li><a href='實習任務五.html'>實習任務五</a><li><a href='實習任務六.html'>實習任務六</a></li></ul><li><a href='協同設計.html'>協同設計</a><li><a href='Onshape.html'>Onshape</a><ul><li><a href='BOMs.html'>BOMs</a></li></ul><li><a href='V-rep.html'>V-rep</a><ul><li><a href='V-rep Tutorial.html'>V-rep Tutorial</a></li></ul></nav><section><div id="tipue_search_content">實習任務二 << <a href='實習任務二.html'>Previous</a> <a href='BubbleRob.html'>Next</a> >> BubbleRob<br /><h1>V-rep Introduction</h1>
 <p>V-rep 檔案格式討論:</p>
 <p><a href="http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=199">http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=199</a> </p>
+<p>主要討論訴求與重點在於機電資整合產品設計, 若無法透過<span style="background-color: #ffff00;">分散式版次管理</span>釐清每一次協同人員改版的詳細歷程與內容, 將難以讓產品開發流程透明且易於維護 (持續改進).</p>
+<p>作者的建議是: 儘量將設計內容以模組化 (models) 單元建構, 然後透過外部 lua 程式導入, 便可彌補目前無文字檔案 ttt 或 ttm 格式時, 無法透過分散式版次管理進行協同設計的遺憾.</p>
 <p><a href="http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=2319">http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=2319</a> </p>
+<p>討論重點在於: 因為運動與動力模擬系統模型所需納入的資料眾多, 且必須考慮與舊版格式相容, 加上壓縮與內容查驗上的特殊設計要求, 希望利用文字檔案建立 ttt 或 ttm 有一定的難度 (或者礙於<span style="background-color: #ffff00;">商業考量</span>), 目前只能透過既有的外部延伸程式架構進行處理.</p>
 <p><a href="http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=7513">http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=7513</a></p>
+<p>討論重點仍以<span style="background-color: #ffff00;">分散式版次管理</span>上的需求為主, </p>
+<p><span>Without version control is almost impossible to work on a V-REP project in a team and even working alone there are several problems like not knowing which are the difference between two version of the same model/scene</span></p>
+<p>但是作者的答覆與五年前一模一樣, 希望具備版次管理的開發流程, 仍需搭配模組化 models  與 Lua 或 Python 程式進行, 之後則將透過 <a href="http://www.coppeliarobotics.com/helpFiles/en/blueZeroPlugin.htm">http://www.coppeliarobotics.com/helpFiles/en/blueZeroPlugin.htm</a> 介面 (<a href="https://github.com/blueworkforce/bluezero">Bluezero 原始碼</a>), 尋求更方便的整合.</p>
+<p>目前的結論為: V-rep 所揭櫫的是一種開放式創新工作模式, 利用主軸技術 (Lua 搭配 C++) 作為核心, 其餘的 GUI 或整合各式動力分析、轉檔與模型搭建, 都納為延伸模組, 從開發者的角度, 利用 Lua 與 Python 原始碼可以操控任何以 C++ 編寫的核心功能, 因此協同分散式版次管理可以在 Programming 的層次運行.</p>
+<p>但就使用 GUI 流程建模的一般用戶, 若無法充分掌握 V-rep 整體程式架構, 必須透過人工方式搭建各種分析功能, 目前只能以觀賞的角度來看 V-rep 所帶出的未來機器人整合開發趨勢.</p>
 <h4>V-rep 主核心程式庫</h4>
 <p><a href="https://github.com/CoppeliaRobotics/v_rep">https://github.com/CoppeliaRobotics/v_rep</a> is the  V-rep core library: </p>
 <p>v_rep.dll </p>
