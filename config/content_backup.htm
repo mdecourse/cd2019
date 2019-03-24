@@ -3,6 +3,11 @@
 <p>倉儲: <a href="https://github.com/mdecourse/cd2019">https://github.com/mdecourse/cd2019</a></p>
 <p>靜態網頁: <a href="https://mde.tw/cd2019">https://mde.tw/cd2019</a> </p>
 <p>動態網頁: <a href="https://cd2019.herokuapp.com">https://cd2019.herokuapp.com</a> </p>
+<p><a href="http://mde.tw/wcm2019/downloads/future-of-jobs-2018-world-economic-forum.pdf">世界經濟論壇 2018 未來工作報告.pdf</a></p>
+<h4>2022 年之前, 企業預計納用技術比例列表</h4>
+<p><img alt="" class="with_border" height="404" src="/images/adopted_technologies_by_2022.png" width="800"/></p>
+<h4>各企業穩定, 新增與多餘工作角色列表</h4>
+<p><img alt="" class="with_border" height="586" src="/images/stable_new_and_redundant_roles_by_2022.png" width="800"/></p>
 <h4>電腦輔助設計室與協同設計室行事曆</h4>
 <p><a href="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei">全頁檢視</a></p>
 <p><iframe height="600" src="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei" width="800"></iframe></p>
@@ -191,7 +196,97 @@ print(c2019)</pre>
 <p><a href="/downloads/Design_of_a_Ball_Handling_Mechanism_for_RoboCup report.pdf">Design of a Ball Handling Mechanism for RoboCup report.pdf</a></p>
 <h4>延伸專案</h4>
 <p>在 Windows 10 環境中, 以 <a href="https://www.msys2.org/">MSYS2</a> 編譯 V-rep (<a href="https://github.com/CoppeliaRobotics/v_rep">https://github.com/CoppeliaRobotics/v_rep</a>).</p>
-<p><a href="https://drive.google.com/file/d/1QIiAhMf9BTvezmG-w4aIa9Oy2FYB7UIu/view?usp=sharing">V-rep 其他版次原始碼.7z</a> (1.8 GB)</p><h3>BubbleRob</h3>
+<p><a href="https://drive.google.com/file/d/1QIiAhMf9BTvezmG-w4aIa9Oy2FYB7UIu/view?usp=sharing">V-rep 其他版次原始碼.7z</a> (1.8 GB)</p><h3>V-rep Introduction</h3>
+<h4>V-rep 主核心程式庫</h4>
+<p><a href="https://github.com/CoppeliaRobotics/v_rep">https://github.com/CoppeliaRobotics/v_rep</a> is the  V-rep core library: </p>
+<p>v_rep.dll </p>
+<p>libv_rep.dll.a</p>
+<p>編譯上述程式庫所需設定檔案 (<a href="https://2019wcm.blogspot.com/2019/03/v-rep.html">編譯參考</a>):</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># location of boost headers:
+    BOOST_INCLUDEPATH = "y:/boost_1_66_0"    # (e.g. Windows)
+    #BOOST_INCLUDEPATH = "/usr/local/include"    # (e.g. MacOS)
+
+# location of lua headers:
+    LUA_INCLUDEPATH = "y:/lua-5.1.5/src"    # (e.g. Windows)
+    #LUA_INCLUDEPATH = "../../../../../mingw64/include/lua5.1"    # (e.g. Windows-MSYS2)
+    #LUA_INCLUDEPATH = "../../lua5_1_4_Linux26g4_64_lib/include"    # (e.g. Ubuntu)
+    #LUA_INCLUDEPATH = "/usr/local/include/lua5.1"    # (e.g. MacOS)
+
+# lua libraries to link:
+    LUA_LIBS = "y:/lua-5.1.5/src/liblua.a"    # (e.g. Windows)
+    #LUA_LIBS = -llua5.1    # (e.g. Windows-MSYS2)
+    #LUA_LIBS = -L"../../lua5_1_4_Linux26g4_64_lib/" -llua5.1    # (e.g. Ubuntu)
+    #LUA_LIBS = "/usr/local/lib/liblua5.1.dylib"    # (e.g. MacOS)
+
+# qscintilla location:
+    QSCINTILLA_DIR = "y:/QScintilla_gpl-2.10.2"    # (e.g. Windows)
+    #QSCINTILLA_DIR = "../../QScintilla-commercial-2.7.2"    # (e.g. Windows-MSYS2)
+    #QSCINTILLA_DIR = "../../QScintilla-commercial-2.7.2"    # (e.g. Ubuntu)
+    #QSCINTILLA_DIR = "../../QScintilla-commercial-2.7.2"    # (e.g. MacOS)
+
+# qscintilla headers:
+    QSCINTILLA_INCLUDEPATH = "$${QSCINTILLA_DIR}/include" "$${QSCINTILLA_DIR}/Qt4Qt5"
+
+# qscintilla libraries to link:
+    QSCINTILLA_LIBS = "$${QSCINTILLA_DIR}/libqscintilla2_qt5d.dll.a"    # (e.g. Windows)
+    #QSCINTILLA_LIBS = "$${QSCINTILLA_DIR}/release/release/libqscintilla2.dll.a"    # (e.g. Windows-MSYS2)    
+    #QSCINTILLA_LIBS = "$${QSCINTILLA_DIR}/release/libqscintilla2.so"    # (e.g. Ubuntu)
+    #QSCINTILLA_LIBS = "$${QSCINTILLA_DIR}/release/libqscintilla2.9.0.2.dylib"    # (e.g. MacOS)
+
+# Make sure if a config.pri is found one level above, that it will be used instead of this one:
+    exists(../config.pri) { include(../config.pri) }
+</pre>
+<p>可見 <a href="https://www.boost.org/">Boost C++ 程式庫</a>, <a href="https://www.lua.org/download.html">Lua 原始碼</a>與 <a href="https://www.riverbankcomputing.com/software/qscintilla/intro">QScintilla 原始碼</a>在 V-rep 系統中扮演重要角色.</p>
+<h4>V-rep 主執行程式</h4>
+<p><a href="https://github.com/CoppeliaRobotics/v_repClientApplication">https://github.com/CoppeliaRobotics/v_repClientApplication</a> is the  V-rep client application for core library:</p>
+<p>vrep.exe</p>
+<p>允許有 Qt GUI 或無 GUI 的介面執行, 同時載入 v_rep.dll 以及  plugin 程式庫</p>
+<p><a href="https://github.com/CoppeliaRobotics/remoteApi">https://github.com/CoppeliaRobotics/remoteApi</a> 則定義 remoteAPI 的連結.</p>
+<h4>V-rep 原始碼使用授權</h4>
+<p>V-rep 的程式碼全部開源, 但 <a href="https://github.com/CoppeliaRobotics/dynamicsPlugin">https://github.com/CoppeliaRobotics/dynamicsPlugin</a> 與 <a href="https://github.com/CoppeliaRobotics/meshCalculationPlugin">https://github.com/CoppeliaRobotics/meshCalculationPlugin</a> 採商用或免費教育授權, 其餘原始碼採 GPL 3 授權. (詳見:<a href="http://www.coppeliarobotics.com/helpFiles/en/licensing.htm">http://www.coppeliarobotics.com/helpFiles/en/licensing.htm</a> )</p>
+<h4>內建模型與場景</h4>
+<p>Default Models:</p>
+<p><a href="https://github.com/CoppeliaRobotics/models">https://github.com/CoppeliaRobotics/models</a> </p>
+<p>Default Scenes:</p>
+<p><a href="https://github.com/CoppeliaRobotics/scenes">https://github.com/CoppeliaRobotics/scenes</a> </p>
+<h4>Lua 應用程式碼</h4>
+<p>Lua for V-rep and Blue REALITY:</p>
+<p><a href="https://github.com/CoppeliaRobotics/lua">https://github.com/CoppeliaRobotics/lua</a> </p>
+<h4>其他程式庫</h4>
+<p>VxMath.dll</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repMath">https://github.com/CoppeliaRobotics/v_repMath</a> </p>
+<p>remoteAPI:</p>
+<p><a href="https://github.com/CoppeliaRobotics/remoteApi">https://github.com/CoppeliaRobotics/remoteApi</a> </p>
+<p>remoteAPi for Lua:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtLuaRemoteApiClient">https://github.com/CoppeliaRobotics/v_repExtLuaRemoteApiClient</a> </p>
+<p>C++ plugin framework:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repPlusPlus">https://github.com/CoppeliaRobotics/v_repPlusPlus</a> </p>
+<p>Plugin skeleton:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtPluginSkeleton">https://github.com/CoppeliaRobotics/v_repExtPluginSkeleton</a> </p>
+<p>Common files for Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/common">https://github.com/CoppeliaRobotics/common</a> </p>
+<p>stub generator:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repStubsGen">https://github.com/CoppeliaRobotics/v_repStubsGen</a>  (<a href="https://github.com/CoppeliaRobotics/v_repExtPluginSkeletonNG">Example</a>)</p>
+<p>CAD data Import/Export Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtAssimp">https://github.com/CoppeliaRobotics/v_repExtAssimp</a> </p>
+<p>Qt Custom GUI interface Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtCustomUI">https://github.com/CoppeliaRobotics/v_repExtCustomUI</a> </p>
+<p>Lua parser Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtLuaParser">https://github.com/CoppeliaRobotics/v_repExtLuaParser</a> </p>
+<p>Video recorder library:</p>
+<p><a href="https://github.com/CoppeliaRobotics/videoRecorder">https://github.com/CoppeliaRobotics/videoRecorder</a> </p>
+<p>use LuaJIT in stead of Lua library:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repLuaLibrary">https://github.com/CoppeliaRobotics/v_repLuaLibrary</a> </p>
+<p>Convex hull library:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtQhull">https://github.com/CoppeliaRobotics/v_repExtQhull</a> </p>
+<p>Image Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtImage">https://github.com/CoppeliaRobotics/v_repExtImage</a> </p>
+<p>ROS interface Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtRosInterface">https://github.com/CoppeliaRobotics/v_repExtRosInterface</a> </p>
+<p>Surface reconstruction Plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtSurfaceReconstruction">https://github.com/CoppeliaRobotics/v_repExtSurfaceReconstruction</a> </p>
+<p>Cloud point matching plugin:</p>
+<p><a href="https://github.com/CoppeliaRobotics/v_repExtICP">https://github.com/CoppeliaRobotics/v_repExtICP</a> </p><h3>BubbleRob</h3>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm</a> </p>
 <p>操作步驟參考: <a href="http://fid.cl/courses/ai-robotics/vrep-tut/tutorial_VREP_bob.pdf">http://fid.cl/courses/ai-robotics/vrep-tut/tutorial_VREP_bob.pdf</a>  (<a href="/downloads/tutorial_VREP_bob.pdf">tutorial_VREP_bob.pdf</a>)</p>
 <p><a href="/downloads/introduction_to_robotics_mechanics_planning_and_control.pdf">introduction_to_robotics_mechanics_planning_and_control.pdf</a></p>
@@ -200,7 +295,6 @@ print(c2019)</pre>
 <p><a href="/downloads/IKexercise.pdf">Inverse Kinematics.pdf</a></p>
 <p><a href="/downloads/MR_practice_exercises.pdf">modern_robotics_exercise.pdf</a></p>
 <p>V-rep Introduction: <a href="http://hades.mech.northwestern.edu/index.php/V-REP_Introduction">http://hades.mech.northwestern.edu/index.php/V-REP_Introduction</a> </p>
-<p></p>
 <p>Get started with V-rep: <a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
 <h4>動態模擬考量</h4>
 <p>If we run the simulation again, we can notice that both objects do not interfere<br/>anymore. However, we notice that BubbleRob slightly moves, even with locked motor.</p>
