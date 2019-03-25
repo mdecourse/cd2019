@@ -83,7 +83,10 @@ $(document).ready(doSearch);
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='Introduction.html'>Introduction</a><li><a href='實習任務.html'>實習任務</a><ul><li><a href='實習任務一.html'>實習任務一</a><ul><li><a href='建立可攜程式系統.html'>建立可攜程式系統</a><li><a href='第一週分組程式.html'>第一週分組程式</a><li><a href='Git Book 摘要.html'>Git Book 摘要</a><li><a href='Github 自學.html'>Github 自學</a><li><a href='w1取分項目.html'>w1取分項目</a></li></ul><li><a href='實習任務二.html'>實習任務二</a><ul><li><a href='V-rep Introduction.html'>V-rep Introduction</a><li><a href='BubbleRob.html'>BubbleRob</a></li></ul><li><a href='實習任務三.html'>實習任務三</a><li><a href='實習任務四.html'>實習任務四</a><li><a href='實習任務五.html'>實習任務五</a><li><a href='實習任務六.html'>實習任務六</a></li></ul><li><a href='協同設計.html'>協同設計</a><li><a href='Onshape.html'>Onshape</a><ul><li><a href='BOMs.html'>BOMs</a></li></ul><li><a href='V-rep.html'>V-rep</a><ul><li><a href='V-rep Tutorial.html'>V-rep Tutorial</a></li></ul></nav><section><div id="tipue_search_content">V-rep Introduction << <a href='V-rep Introduction.html'>Previous</a> <a href='實習任務三.html'>Next</a> >> 實習任務三<br /><h1>BubbleRob</h1>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='Introduction.html'>Introduction</a><li><a href='實習任務.html'>實習任務</a><ul><li><a href='實習任務一.html'>實習任務一</a><ul><li><a href='建立可攜程式系統.html'>建立可攜程式系統</a><li><a href='第一週分組程式.html'>第一週分組程式</a><li><a href='Git Book 摘要.html'>Git Book 摘要</a><li><a href='Github 自學.html'>Github 自學</a><li><a href='w1取分項目.html'>w1取分項目</a></li></ul><li><a href='實習任務二.html'>實習任務二</a><ul><li><a href='V-rep Introduction.html'>V-rep Introduction</a><li><a href='BubbleRob.html'>BubbleRob</a><li><a href='BubbleRob1.html'>BubbleRob1</a></li></ul><li><a href='實習任務三.html'>實習任務三</a><li><a href='實習任務四.html'>實習任務四</a><li><a href='實習任務五.html'>實習任務五</a><li><a href='實習任務六.html'>實習任務六</a></li></ul><li><a href='協同設計.html'>協同設計</a><li><a href='Onshape.html'>Onshape</a><ul><li><a href='BOMs.html'>BOMs</a></li></ul><li><a href='V-rep.html'>V-rep</a><ul><li><a href='V-rep Tutorial.html'>V-rep Tutorial</a><li><a href='v-rep ref.html'>v-rep ref</a></li></ul></nav><section><div id="tipue_search_content">V-rep Introduction << <a href='V-rep Introduction.html'>Previous</a> <a href='BubbleRob1.html'>Next</a> >> BubbleRob1<br /><h1>BubbleRob</h1>
+<h4>V-rep user manual:</h4>
+<p><a href="http://www.coppeliarobotics.com/helpFiles/">http://www.coppeliarobotics.com/helpFiles/</a></p>
+<h4>BubbleRob Tutorial:</h4>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/bubbleRobTutorial.htm</a> </p>
 <p>操作步驟參考: <a href="http://fid.cl/courses/ai-robotics/vrep-tut/tutorial_VREP_bob.pdf">http://fid.cl/courses/ai-robotics/vrep-tut/tutorial_VREP_bob.pdf</a>  (<a href="./../downloads/tutorial_VREP_bob.pdf">tutorial_VREP_bob.pdf</a>)</p>
 <p><a href="./../downloads/introduction_to_robotics_mechanics_planning_and_control.pdf">introduction_to_robotics_mechanics_planning_and_control.pdf</a></p>
@@ -306,4 +309,60 @@ function hideDlg()
     end
 end
 </pre>
-<p></p><br />V-rep Introduction << <a href='V-rep Introduction.html'>Previous</a> <a href='實習任務三.html'>Next</a> >> 實習任務三</div></section></div></body></html>
+<p>左右輪分別建立 slider:</p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+         
+    -- This is executed exactly once, the first time this script is executed
+    bubbleRobBase=sim.getObjectAssociatedWithScript(sim.handle_self) -- this is bubbleRob's handle
+    leftMotor=sim.getObjectHandle("bubbleRob_leftMotor") -- Handle of the left motor
+    rightMotor=sim.getObjectHandle("bubbleRob_rightMotor") -- Handle of the right motor
+    noseSensor=sim.getObjectHandle("bubbleRob_sensingNose") -- Handle of the proximity sensor
+    minMaxSpeed={50*math.pi/180,300*math.pi/180} -- Min and max speeds for each motor
+    backUntilTime=-1 -- Tells whether bubbleRob is in forward or backward mode
+    -- Create the custom UI:
+    xml = '&lt;ui title="'..sim.getObjectName(bubbleRobBase)..' speed" closeable="false" resizeable="false" activate="false"&gt;'..[[
+                &lt;label text="left motor speed" wordwrap="false" /&gt;
+                &lt;hslider minimum="0" maximum="100" on-change="left_speedChange_callback" id="1"/&gt;
+                &lt;label text="right motor speed" wordwrap="false" /&gt;
+                &lt;hslider minimum="0" maximum="100" on-change="right_speedChange_callback" id="2"/&gt;
+            &lt;label text="" style="* {margin-left: 300px;}"/&gt;
+        &lt;/ui&gt;
+        ]]
+    ui=simUI.create(xml)
+    left_speed=(minMaxSpeed[1]+minMaxSpeed[2])*0.5
+    right_speed=(minMaxSpeed[1]+minMaxSpeed[2])*0.5
+    simUI.setSliderValue(ui,1,100*(left_speed-minMaxSpeed[1])/(minMaxSpeed[2]-minMaxSpeed[1]))
+    simUI.setSliderValue(ui,2,100*(left_speed-minMaxSpeed[1])/(minMaxSpeed[2]-minMaxSpeed[1]))
+    
+end
+function right_speedChange_callback(ui,id,newVal)
+    right_speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100
+end
+
+function left_speedChange_callback(ui,id,newVal)
+    left_speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100
+end
+
+
+function sysCall_actuation() 
+    result=sim.readProximitySensor(noseSensor) -- Read the proximity sensor
+    -- If we detected something, we set the backward mode:
+    if (result&gt;0) then backUntilTime=sim.getSimulationTime()+4 end 
+
+    if (backUntilTime&lt;sim.getSimulationTime()) then
+        -- When in forward mode, we simply move forward at the desired speed
+        sim.setJointTargetVelocity(leftMotor,left_speed)
+        sim.setJointTargetVelocity(rightMotor,right_speed)
+    else
+        -- When in backward mode, we simply backup in a curve at reduced speed
+        sim.setJointTargetVelocity(leftMotor,-left_speed/2)
+        sim.setJointTargetVelocity(rightMotor,-right_speed/8)
+    end
+end
+
+function sysCall_cleanup() 
+    simUI.destroy(ui)
+end 
+</pre>
+<p></p>
+<br />V-rep Introduction << <a href='V-rep Introduction.html'>Previous</a> <a href='BubbleRob1.html'>Next</a> >> BubbleRob1</div></section></div></body></html>
