@@ -208,6 +208,9 @@ print(c2019)</pre>
 <h4>延伸專案</h4>
 <p>在 Windows 10 環境中, 以 <a href="https://www.msys2.org/">MSYS2</a> 編譯 V-rep (<a href="https://github.com/CoppeliaRobotics/v_rep">https://github.com/CoppeliaRobotics/v_rep</a>).</p>
 <p><a href="https://drive.google.com/file/d/1QIiAhMf9BTvezmG-w4aIa9Oy2FYB7UIu/view?usp=sharing">V-rep 其他版次原始碼.7z</a> (1.8 GB)</p><h3>V-rep Introduction</h3>
+<p><a href="https://github.com/mdecourse/cd2018/issues/21">https://github.com/mdecourse/cd2018/issues/21</a> </p>
+<p><a href="/downloads/Jansen_walker_40423116car5-2.ttt">Jansen_walker_40423116car5-2.ttt</a></p>
+<p><a href="/downloads/mBot_model.ttt">mBot_model.ttt</a></p>
 <p>V-rep 檔案格式討論:</p>
 <p><a href="http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=199">http://www.forum.coppeliarobotics.com/viewtopic.php?f=7&amp;t=199</a> </p>
 <p>主要討論訴求與重點在於機電資整合產品設計, 若無法透過<span style="background-color: #ffff00;">分散式版次管理</span>釐清每一次協同人員改版的詳細歷程與內容, 將難以讓產品開發流程透明且易於維護 (持續改進).</p>
@@ -672,8 +675,10 @@ end</pre>
 <p><span></span></p>
 <p>We run the simulation.<span> </span><em>BubbleRob</em><span> </span>now moves forward while trying to avoid obstacles (in a very basic fashion). While the simulation is still running, change<span> </span><em>BubbleRob's</em><span> </span>velocity, and copy/paste it a few times. Also try to scale a few of them while the simulation is still running. Be aware that the minimum distance calculation functionality might be heavily slowing down the simulation, depending on the environment. You can turn that functionality on and off in the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/distanceCalculation.htm">distance dialog</a>, by checking / unchecking the<span> </span><strong>Enable all distance calculations</strong><span> </span>item.</p>
 <p>Using a script to control a robot or model is only one way of doing. V-REP offers many different ways (also combined), have a look at the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/externalControllerTutorial.htm">external controller tutorial</a>.</p>
-<p><br/><br/></p>
-<p></p><h2>實習任務三</h2>
+<h4>Reference</h4>
+<p><a href="/downloads/Kinematic_model_of_three_wheeled_mobile_robot.pdf">Kinematic_model_of_three_wheeled_mobile_robot.pdf</a></p>
+<p><a href="/downloads/mobile_robot_kinematics.pdf">mobile_robot_kinematics.pdf</a></p>
+<p><a href="/downloads/Kinematic Control of Underwater Robotic System.pdf">Kinematic Control of Underwater Robotic System.pdf</a></p><h2>實習任務三</h2>
 <p><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm</a> </p>
 <p>機械設計中的 Kinematic and Dynamic Modeling 中有許多建立模型的技巧, 在運用 <a href="http://www.coppeliarobotics.com/">V-rep</a> 進行運動與動態模擬的過程中, 除了利用 <a href="http://solvespace.com">Solvespace</a> 或 <a href="https://www.onshape.com/">OnShape</a> 繪製系統所牽涉的零組件外, 還必須考慮模擬過程的實用性, 意即在機械系統概念設計初步階段, 必須要先掌握各零組件基本的運動與動態特性, 不必將零組件仍無法明確設計的特徵尺寸置入.</p>
 <p>在這個實習任務中, 可以學習如何建立適用於 <a href="http://www.coppeliarobotics.com/">V-rep</a> 的零件模型.</p>
@@ -791,3 +796,14 @@ end</pre>
 <p><a href="http://mde.tw/2017springcd/blog/vrep-planar-mechanism-simulation.html">http://mde.tw/2017springcd/blog/vrep-planar-mechanism-simulation.html</a> </p>
 <p><a href="http://mde.tw/2017springcd/blog/vrep-introduction.html">http://mde.tw/2017springcd/blog/vrep-introduction.html</a> </p>
 <p><a href="http://mde.tw/cadp2018/content/V-rep.html">http://mde.tw/cadp2018/content/V-rep.html</a> </p>
+<h1>Webots</h1>
+<p><a href="https://github.com/omichel/webots">https://github.com/omichel/webots</a> </p>
+<p><a href="https://en.wikipedia.org/wiki/Webots">Webots</a> 終於在 2018 年底, 以開源釋出, 並且採用 <a href="https://github.com/omichel/webots/blob/master/LICENSE">Apache 2.0 license</a>, 相較於 V-rep 目前區分教育版免費, 但商用必須付費的使用授權寬鬆許多.</p>
+<p>Webots 還提供 <a href="https://cyberbotics.com/doc/guide/web-interface">Web Interface</a>, 允許透過網際介面操控所模擬的機器系統.</p>
+<p>KMOL <a href="https://drive.google.com/file/d/1AqmudowMcuUSD6Qr-4x3qzKOztja51wo/view?usp=sharing">2019_webots.7z</a> 下載</p>
+<p><a href="/downloads/Cyberbotics Robot Curriculum.pdf">Cyberbotics Robot Curriculum.pdf</a></p>
+<p>Webots get started: <a href="https://cyberbotics.com/#support">https://cyberbotics.com/#support</a> </p>
+<p>Webots user guide: <a href="https://cyberbotics.com/doc/guide/index">https://cyberbotics.com/doc/guide/index</a></p>
+<p>Webots reference manual: <a href="https://cyberbotics.com/doc/reference/index">https://cyberbotics.com/doc/reference/index</a></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/RhzZ6Ao6Shc" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/Jv0bkgGf5vQ" width="560"></iframe></p>
