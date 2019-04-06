@@ -806,3 +806,21 @@ end</pre>
 <p>Webots user guide: <a href="https://cyberbotics.com/doc/guide/index">https://cyberbotics.com/doc/guide/index</a></p>
 <p>Webots reference manual: <a href="https://cyberbotics.com/doc/reference/index">https://cyberbotics.com/doc/reference/index</a></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/RhzZ6Ao6Shc" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/Jv0bkgGf5vQ" width="560"></iframe></p>
+<h2>Webots doc</h2>
+<h4>網際文件處理技術</h4>
+<p><a href="https://github.com/mdecourse/webots/tree/master/docs">https://github.com/mdecourse/webots/tree/master/docs</a> 為 Webots 的文件目錄, 其中 <a href="https://github.com/mdecourse/webots/blob/master/docs/doc.php">https://github.com/mdecourse/webots/blob/master/docs/doc.php</a> 負責處理 <a href="https://cyberbotics.com/doc/">https://cyberbotics.com/doc/</a> 目錄下的文件網際派送, 共有三個主要文件:</p>
+<p>Webots Guide: <a href="https://cyberbotics.com/doc/guide/index">https://cyberbotics.com/doc/guide/index</a></p>
+<p>Webots Reference Manual: <a href="https://cyberbotics.com/doc/reference/index">https://cyberbotics.com/doc/reference/index</a></p>
+<p>Webots for Automobiles: <a href="https://cyberbotics.com/doc/automobile/index">https://cyberbotics.com/doc/automobile/index</a></p>
+<p>意即, Webots 的網頁採用 php 程式, WWW 伺服器採用 Apache, 而操作系統則使用 Ubuntu.</p>
+<p>從 <a href="https://github.com/omichel/webots/blob/master/docs/local_exporter.py">https://github.com/omichel/webots/blob/master/docs/local_exporter.py</a> 也可以發現, Webots 建議在近端使用 doc 目錄下文件的方式為, 利用 local_exporter.py 從官方網站下載 index.html 與 dependencies 目錄中所需的 Javascript, 然後再透過 index.html 導引各 Javascript 程式, 從 guide, reference 與 automobile 目錄中, 將 markdown 格式文件動態轉為 html.</p>
+<p>利用 Markdown 與 Javascript 處理遠端與近端文件的好處是, 文件管理人員可以採用各式合用的文字編輯器管理所有 Markdown 檔案, 且各版本間的內容可以納入分散式版次管理系統, 不僅能夠多人非同步協同, 且透過資料庫中版次的內容擷取, 可以在同一網站中透過網際 URL 版次變數的宣告而擷取不同版本的文件.</p>
+<p>例如: <a href="https://www.cyberbotics.com/doc/guide/page?version=R2019a">https://www.cyberbotics.com/doc/guide/page?version=R2019a</a> 可以取得倉儲中 tag 為 R2019a 版次的 Webots guide 文件內容.</p>
+<p>而 <a href="https://www.cyberbotics.com/doc/guide/page?version=R2019a-rev1">https://www.cyberbotics.com/doc/guide/page?version=R2019a-rev1</a> 則是 R2019a-rev1 版次的文件內容.</p>
+<p>以上處理網際文件的技術, 除了能夠將軟體套件的手冊納入分散式版次管理系統 (如 Git 或 Fossil SCM) 之外, 還能讓之後的多語系文件, 以不同的 Markdown 文件目錄儲存, 然後在主文件連結中提供不同語系 Markdown 文件所在目錄即可, 例如:</p>
+<p>/doc/guide_zh-TW 指向中文正體文件目錄, 而 /doc/guide_zh-CN 則指向中文簡體文件目錄等, 各語系文件可以採用分散式版次管理的流程, 以非同步協同方式自行管理維護不同 Webots 套件的各種技術文件.</p>
+<h4>KMOL 能夠從 Webots 技術文件處理流程中學到甚麼?</h4>
+<p>這應該是一個不錯的 4+1 碩士題目:-)</p>
+<p><a href="/downloads/Cyberbotics Robot Curriculum.pdf">Cyberbotics Robot Curriculum.pdf</a></p>
+<p><a href="/downloads/Design and Assessment of a Robot Curriculum based on the E-puck Robot and Webots.pdf">Design and Assessment of a Robot Curriculum based on the E-puck Robot and Webots.pdf</a></p>
