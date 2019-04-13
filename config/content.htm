@@ -739,6 +739,90 @@ end</pre>
 <p><a href="/downloads/敏捷產品設計簡介.pdf">敏捷產品設計簡介.pdf</a></p>
 <p><a href="/downloads/NI_Mechatronics_Machine_Design_Guide.pdf">NI_Mechatronics_Machine_Design_Guide.pdf</a></p>
 <p>c-k theory: <a href="https://mde1a1.kmol.info/2017fall/wiki?name=c-k+design+theory">https://mde1a1.kmol.info/2017fall/wiki?name=c-k+design+theory</a> </p>
+<p></p><h1>FreeCAD</h1>
+<p><a href="https://drive.google.com/file/d/149LTLypC9eeStWfrlLceAkozZq4F8A_r/view?usp=sharing">FreeCAD 0.18.7z for Windows 10 64 位元 下載</a></p>
+<p>上述系統內建 python36.exe, 若與 wscite 合用, 需要 Python 3.6 版次中的 pythonw.exe (<a href="/downloads/pythonw_36.7z">下載 pythonw_36.7z</a>)</p>
+<p>測試程式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD, Part
+import FreeCADGui
+
+FreeCADGui.showMainWindow()
+mw=FreeCADGui.getMainWindow()
+mw.hide()
+
+obj=Part.makeCone(10,8,10)
+doc = FreeCAD.newDocument()
+Part.show(obj)
+
+view = FreeCADGui.getDocument(doc.Name).activeView()
+view.setAnimationEnabled(False)
+view.viewAxometric()
+view.fitAll()
+
+# It's important not to use Qt's QGLFramebufferObject because it crashes when no GUI is shown
+# but Qt's QGLPixelBuffer still works.
+par=FreeCAD.ParamGet("User parameter:BaseApp")
+grp=par.GetGroup("Preferences/Document")
+grp.SetBool("DisablePBuffers",False)
+
+view.saveImage('crystal.png',800,600,'Current')
+FreeCAD.closeDocument(doc.Name)</pre>
+<p>建立零件, 轉為 stl  檔案:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD
+import Part
+import Mesh
+shape = Part.makeCone(10,8,10)
+doc = App.newDocument('Doc')
+pf = doc.addObject("Part::Feature","MyShape")
+pf.Shape = shape
+Mesh.export([pf], 'my_cone.stl')</pre>
+<p>利用布林運算建立零件後, 轉為 stl 檔案:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD, FreeCADGui, Part , Mesh
+from FreeCAD import Base
+import math
+steps=360 #number of polyline segments
+dang=math.radians(360/steps) #step angle
+e=10 #eccentricity
+r=60 #radius
+ang=0 #start anle
+z=0 #line z coordinate
+halfw=r+e+20
+halfh=r+e+20
+
+for i in range(steps): #make many lines and connect they in wire (polyline, epitrochoid)
+    if i==0: #for first line
+        x1=e*math.cos(3*ang)+r*math.cos(ang) #coords for line startpoint
+        y1=e*math.sin(3*ang)+r*math.sin(ang)
+        ang=dang 
+        x2=e*math.cos(3*ang)+r*math.cos(ang) #coords for line endpoint
+        y2=e*math.sin(3*ang)+r*math.sin(ang)
+        seg=Part.makeLine((x1,y1,z),(x2,y2,z))
+        wire2=Part.Wire([seg])
+        x1=x2
+        y1=y2
+    else: 
+        x2=e*math.cos(3*ang)+r*math.cos(ang)
+        y2=e*math.sin(3*ang)+r*math.sin(ang)
+        seg=Part.makeLine((x1,y1,z),(x2,y2,z))
+        wire2=Part.Wire([wire2,seg])
+        x1=x2
+        y1=y2
+    ang=ang+dang #increment angle
+
+edge1 = Part.makeLine((-halfw,halfh,0), (halfw,halfh,0)) #lines needed to create rectangle
+edge2 = Part.makeLine((halfw,halfh,0), (halfw,-halfh,0))
+edge3 = Part.makeLine((halfw,-halfh,0), (-halfw,-halfh,0))
+edge4 = Part.makeLine((-halfw,-halfh,0), (-halfw,halfh,0))
+wire1 = Part.Wire([edge1,edge2,edge3,edge4]) #rectangle
+face1 = Part.Face(wire1) #face from rectangle
+face2=Part.Face(wire2) #face from epitrochoid http://en.wikipedia.org/wiki/Epitrochoid
+diff = face1.cut(face2) #boolean cut epitrochoid from rectangle
+ext=diff.extrude(Base.Vector(0,0,30)) #extrude the cut (face)
+#Part.show(ext) #show extrude in FreeCAD window
+doc = App.newDocument('Doc')
+pf = doc.addObject("Part::Feature","MyShape")
+pf.Shape = ext
+Mesh.export([pf], 'my_ext.stl')</pre>
 <p></p><h1>V-rep</h1>
 <p>source: <a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
 <p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>

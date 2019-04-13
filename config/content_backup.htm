@@ -739,6 +739,43 @@ end</pre>
 <p><a href="/downloads/敏捷產品設計簡介.pdf">敏捷產品設計簡介.pdf</a></p>
 <p><a href="/downloads/NI_Mechatronics_Machine_Design_Guide.pdf">NI_Mechatronics_Machine_Design_Guide.pdf</a></p>
 <p>c-k theory: <a href="https://mde1a1.kmol.info/2017fall/wiki?name=c-k+design+theory">https://mde1a1.kmol.info/2017fall/wiki?name=c-k+design+theory</a> </p>
+<p></p><h1>FreeCAD</h1>
+<p><a href="https://drive.google.com/file/d/149LTLypC9eeStWfrlLceAkozZq4F8A_r/view?usp=sharing">FreeCAD 0.18.7z for Windows 10 64 位元 下載</a></p>
+<p>上述系統內建 python36.exe, 若與 wscite 合用, 需要 Python 3.6 版次中的 pythonw.exe (<a href="/downloads/pythonw_36.7z">下載 pythonw_36.7z</a>)</p>
+<p>測試程式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD, Part
+import FreeCADGui
+
+FreeCADGui.showMainWindow()
+mw=FreeCADGui.getMainWindow()
+mw.hide()
+
+obj=Part.makeCone(10,8,10)
+doc = FreeCAD.newDocument()
+Part.show(obj)
+
+view = FreeCADGui.getDocument(doc.Name).activeView()
+view.setAnimationEnabled(False)
+view.viewAxometric()
+view.fitAll()
+
+# It's important not to use Qt's QGLFramebufferObject because it crashes when no GUI is shown
+# but Qt's QGLPixelBuffer still works.
+par=FreeCAD.ParamGet("User parameter:BaseApp")
+grp=par.GetGroup("Preferences/Document")
+grp.SetBool("DisablePBuffers",False)
+
+view.saveImage('crystal.png',800,600,'Current')
+FreeCAD.closeDocument(doc.Name)</pre>
+<p>建立零件, 轉為 stl  檔案:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD
+import Part
+import Mesh
+shape = Part.makeCone(10,8,10)
+doc = App.newDocument('Doc')
+pf = doc.addObject("Part::Feature","MyShape")
+pf.Shape = shape
+Mesh.export([pf], 'my_cone.stl')</pre>
 <p></p><h1>V-rep</h1>
 <p>source: <a href="http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator">http://hades.mech.northwestern.edu/index.php/Getting_Started_with_the_V-REP_Simulator</a> </p>
 <p>Now that you have the<span> </span><a class="external text" href="https://github.com/NxRLab/ModernRobotics" rel="nofollow">MR code library</a>, you need the cross-platform V-REP robot simulator to allow you to visualize the motions of robots.<span> </span><b>You should complete the items on this page before moving on with the rest of the course!</b><span> </span>Click on any of the images to make them larger.</p>
@@ -815,6 +852,7 @@ end</pre>
 <h4>Robot Benchmark</h4>
 <p style="padding-left: 30px;"><a href="https://robotbenchmark.net/">https://robotbenchmark.net/</a></p>
 <h4>Webots 參考資料</h4>
+<p style="padding-left: 30px;"><a href="/downloads/vrml97specification.pdf">vrml97specification.pdf</a> (1997)</p>
 <p style="padding-left: 30px;"><a href="/downloads/vrml_primer_tutorial.pdf">vrml_primer_tutorial.pdf</a> (1998)</p>
 <p style="padding-left: 30px;"><a href="/downloads/WeBots_2002_guide.pdf">WeBots_2002_guide.pdf</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/Aibo and Webots_Simulation, wireless remote control and controller transfer.pdf">Aibo and Webots_Simulation, wireless remote control and controller transfer.pdf</a> (2006)</p>
