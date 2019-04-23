@@ -39,7 +39,8 @@
 <ol>
 <li>讓學員得以利用 <a href="https://www.onshape.com/">Onshape</a> 以協同模式, 進行機電資有關的產品開發, 並利用 <a href="http://www.coppeliarobotics.com/">V-rep</a> 執行該產品的模擬驗證.</li>
 <li><span>各學員必須每週進行學習自評與互評, 並學習如何透過內容充實 (使用夠好麥克風錄音) 的影片 (on Youtube) 發表心得.</span></li>
-</ol><h2>實習任務一</h2>
+</ol>
+<h4><span></span></h4><h2>實習任務一</h2>
 <h4>學習要點</h4>
 <p>本學期的課程將從各學員自行製作可攜程式系統開始, 讓各學員以團隊協同的方式整理資料, 並且推選代表進行簡報.</p>
 <p>此外, 透過 ungit 的導入, 讓 git 與 github 在圖形化介面與中文提交訊息的交互應用下, 能夠更加提升學習效果.</p>
@@ -768,6 +769,64 @@ grp.SetBool("DisablePBuffers",False)
 view.saveImage('crystal.png',800,600,'Current')
 FreeCAD.closeDocument(doc.Name)</pre>
 <p>建立零件, 轉為 stl  檔案:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD
+import Part
+import Mesh
+shape = Part.makeCone(10,8,10)
+doc = App.newDocument('Doc')
+pf = doc.addObject("Part::Feature","MyShape")
+pf.Shape = shape
+Mesh.export([pf], 'my_cone.stl')</pre>
+<p>利用布林運算建立零件後, 轉為 stl 檔案:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD, FreeCADGui, Part , Mesh
+from FreeCAD import Base
+import math
+steps=360 #number of polyline segments
+dang=math.radians(360/steps) #step angle
+e=10 #eccentricity
+r=60 #radius
+ang=0 #start anle
+z=0 #line z coordinate
+halfw=r+e+20
+halfh=r+e+20
+
+for i in range(steps): #make many lines and connect they in wire (polyline, epitrochoid)
+    if i==0: #for first line
+        x1=e*math.cos(3*ang)+r*math.cos(ang) #coords for line startpoint
+        y1=e*math.sin(3*ang)+r*math.sin(ang)
+        ang=dang 
+        x2=e*math.cos(3*ang)+r*math.cos(ang) #coords for line endpoint
+        y2=e*math.sin(3*ang)+r*math.sin(ang)
+        seg=Part.makeLine((x1,y1,z),(x2,y2,z))
+        wire2=Part.Wire([seg])
+        x1=x2
+        y1=y2
+    else: 
+        x2=e*math.cos(3*ang)+r*math.cos(ang)
+        y2=e*math.sin(3*ang)+r*math.sin(ang)
+        seg=Part.makeLine((x1,y1,z),(x2,y2,z))
+        wire2=Part.Wire([wire2,seg])
+        x1=x2
+        y1=y2
+    ang=ang+dang #increment angle
+
+edge1 = Part.makeLine((-halfw,halfh,0), (halfw,halfh,0)) #lines needed to create rectangle
+edge2 = Part.makeLine((halfw,halfh,0), (halfw,-halfh,0))
+edge3 = Part.makeLine((halfw,-halfh,0), (-halfw,-halfh,0))
+edge4 = Part.makeLine((-halfw,-halfh,0), (-halfw,halfh,0))
+wire1 = Part.Wire([edge1,edge2,edge3,edge4]) #rectangle
+face1 = Part.Face(wire1) #face from rectangle
+face2=Part.Face(wire2) #face from epitrochoid http://en.wikipedia.org/wiki/Epitrochoid
+diff = face1.cut(face2) #boolean cut epitrochoid from rectangle
+ext=diff.extrude(Base.Vector(0,0,30)) #extrude the cut (face)
+#Part.show(ext) #show extrude in FreeCAD window
+doc = App.newDocument('Doc')
+pf = doc.addObject("Part::Feature","MyShape")
+pf.Shape = ext
+Mesh.export([pf], 'my_ext.stl')</pre>
+<p></p>
+<h2>FreeCAD STL</h2>
+<p><span>利用以下 FreeCAD Python 程式所建立的零件 STL檔案:</span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD
 import Part
 import Mesh
